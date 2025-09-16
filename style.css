@@ -267,14 +267,16 @@ nav a:focus-visible {
   stroke-width: 2;
   pointer-events: none;
 }
-#theme-toggle .sun-icon {
+/* Fixed: Only one icon should be visible at a time */
+.moon-icon,
+.sun-icon {
   display: none;
 }
-.dark-theme #theme-toggle .sun-icon {
+:root:not(.dark-theme) .moon-icon {
   display: block;
 }
-.dark-theme #theme-toggle .moon-icon {
-  display: none;
+.dark-theme .sun-icon {
+  display: block;
 }
 
 #mobile-menu-btn {
@@ -1116,4 +1118,115 @@ footer::before {
 }
 [role="img"] {
   border: 0;
+}
+
+/* Hero Popup Styles */
+.hero-popup {
+  position: absolute;
+  background: var(--glass-strong);
+  backdrop-filter: var(--blur-light);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s var(--easing);
+  z-index: 10;
+  cursor: pointer;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Positioning and animation when active */
+.hero-popup.active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.hero-popup:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  color: white;
+}
+
+/* Arrow/Triangle styles */
+.popup-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px;
+  transition: border-color 0.3s var(--easing);
+}
+
+.hero-popup.active:hover .popup-arrow {
+    border-color: transparent transparent var(--accent-primary) transparent;
+}
+
+
+/* Specific positioning for each popup and their animations */
+.hero-popup.top-left {
+  top: 0;
+  left: 0;
+  transform: translate(calc(-100% - 15px), calc(-100% - 15px));
+}
+.hero-popup.top-right {
+  top: 0;
+  right: 0;
+  transform: translate(calc(100% + 15px), calc(-100% - 15px));
+}
+.hero-popup.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(calc(-100% - 15px), calc(100% + 15px));
+}
+.hero-popup.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: translate(calc(100% + 15px), calc(100% + 15px));
+}
+
+.hero-popup.top-left .popup-arrow {
+  border-color: transparent transparent var(--glass-strong) transparent;
+  bottom: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-popup.top-right .popup-arrow {
+  border-color: transparent transparent var(--glass-strong) transparent;
+  bottom: -16px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.hero-popup.bottom-left .popup-arrow {
+  border-color: var(--glass-strong) transparent transparent transparent;
+  top: -16px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.hero-popup.bottom-right .popup-arrow {
+  border-color: var(--glass-strong) transparent transparent transparent;
+  top: -16px;
+  right: 50%;
+  transform: translateX(50%);
+}
+
+/* No popups on initial hero image hover */
+.hero-image-wrapper:hover .hero-popup {
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0.8);
 }

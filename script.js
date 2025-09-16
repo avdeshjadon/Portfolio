@@ -177,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
       this.initProjectModals();
       this.animateHeadline();
       this.initInteractiveGlow();
+      this.initHeroPopups();
     }
 
     animateHeadline() {
@@ -197,16 +198,22 @@ document.addEventListener("DOMContentLoaded", () => {
     initInteractiveGlow() {
       const wrapper = document.querySelector(".hero-image-wrapper");
       const heroImage = document.querySelector(".hero-image");
+      const popups = document.querySelectorAll(".hero-popup");
       if (!wrapper || !heroImage || CONFIG.isReducedMotion) return;
 
       const originalSrc = heroImage.src;
       let currentImage = 'avdesh.png';
+      
+      const hideAllPopups = () => {
+        popups.forEach(popup => {
+            popup.style.opacity = '0';
+            popup.style.visibility = 'hidden';
+            popup.style.transform = 'scale(0.8)';
+        });
+      };
 
-      const changeImage = UTILS.throttle((e) => {
+      const changeImageAndPopup = UTILS.throttle((e) => {
         const rect = wrapper.getBoundingClientRect();
-        wrapper.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
-        wrapper.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
-
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         
@@ -216,15 +223,20 @@ document.addEventListener("DOMContentLoaded", () => {
         const isRight = e.clientX > centerX;
         
         let newImage = 'avdesh.png';
+        let popupClass = '';
 
         if (isUp && isLeft) {
           newImage = 'avdesh-up-left.png';
+          popupClass = 'top-left';
         } else if (isUp && isRight) {
           newImage = 'avdesh-up-right.png';
+          popupClass = 'top-right';
         } else if (isDown && isLeft) {
           newImage = 'avdesh-down-left.png';
+          popupClass = 'bottom-left';
         } else if (isDown && isRight) {
           newImage = 'avdesh-down-right.png';
+          popupClass = 'bottom-right';
         } else {
             newImage = 'avdesh.png';
         }
@@ -233,13 +245,27 @@ document.addEventListener("DOMContentLoaded", () => {
           heroImage.src = `images/${newImage}`;
           currentImage = newImage;
         }
+
+        // Hide all popups first
+        hideAllPopups();
+        
+        // Only show a popup if a specific direction image is displayed
+        if (popupClass) {
+          const popupToShow = document.querySelector(`.hero-popup.${popupClass}`);
+          if (popupToShow) {
+            popupToShow.style.opacity = '1';
+            popupToShow.style.visibility = 'visible';
+            popupToShow.style.transform = 'scale(1)';
+          }
+        }
       }, 50);
 
-      wrapper.addEventListener("mousemove", changeImage);
+      wrapper.addEventListener("mousemove", changeImageAndPopup);
 
       wrapper.addEventListener('mouseleave', () => {
         heroImage.src = originalSrc;
         currentImage = originalSrc;
+        hideAllPopups();
       });
     }
 
@@ -293,6 +319,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     onResize() {
       for (const s of this.systems) if (s.onResize) s.onResize();
+    }
+    
+    initHeroPopups() {
+      const popups = document.querySelectorAll(".hero-popup");
+      popups.forEach(popup => {
+        popup.addEventListener("click", (e) => {
+          const targetId = e.currentTarget.dataset.target;
+          const targetSection = document.getElementById(targetId);
+          if (targetSection) {
+            targetSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+        });
+      });
     }
   }
 
