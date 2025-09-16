@@ -203,7 +203,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const originalSrc = heroImage.src;
       let currentImage = 'avdesh.png';
-      
+      let leaveTimeout;
+
       const hideAllPopups = () => {
         popups.forEach(popup => {
             popup.classList.remove('active');
@@ -211,6 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const changeImageAndPopup = UTILS.throttle((e) => {
+        clearTimeout(leaveTimeout); // Clear the timeout if the mouse re-enters
         const rect = wrapper.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
@@ -253,11 +255,17 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 50);
 
       wrapper.addEventListener("mousemove", changeImageAndPopup);
-
+      
       wrapper.addEventListener('mouseleave', () => {
-        heroImage.src = originalSrc;
-        currentImage = originalSrc;
-        hideAllPopups();
+        leaveTimeout = setTimeout(() => {
+          heroImage.src = originalSrc;
+          currentImage = originalSrc;
+          hideAllPopups();
+        }, 50); // 300ms delay to give time for cursor to reach pop-up
+      });
+      
+      popups.forEach(popup => {
+        popup.addEventListener('mouseenter', () => clearTimeout(leaveTimeout));
       });
     }
 

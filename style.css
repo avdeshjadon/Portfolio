@@ -494,7 +494,8 @@ section {
   animation: fadeInUp 0.8s var(--easing) 0.2s forwards;
   will-change: transform, opacity;
   width: 100%;
-  max-width: 400px;
+  max-width: var(--max-width);
+  height: 400px;
 }
 .hero-glow {
   position: absolute;
@@ -519,17 +520,13 @@ section {
 }
 .hero-image {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
   filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.1));
   will-change: transform, filter;
   transition: all 0.4s var(--easing);
 }
 
-.hero-image-wrapper:hover .hero-image {
-  transform: scale(1.02);
-  filter: drop-shadow(0 0 25px var(--accent-primary));
-}
 
 .eyebrow {
   color: var(--accent-primary);
@@ -1125,12 +1122,12 @@ footer::before {
 .hero-popup {
   position: absolute;
   background: var(--glass-strong);
-  backdrop-filter: var(--blur-light);
+  backdrop-filter: var(--blur-heavy);
   border: 1px solid var(--glass-border);
-  border-radius: var(--radius-sm);
-  padding: 10px 18px;
-  font-size: 15px;
-  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 16px 24px;
+  font-size: 16px;
+  font-weight: 700;
   color: var(--text-primary);
   opacity: 0;
   visibility: hidden;
@@ -1138,7 +1135,7 @@ footer::before {
   z-index: 10;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: var(--shadow-subtle);
+  box-shadow: var(--shadow-strong);
   transform: scale(0.8);
 }
 .hero-image-wrapper:hover .hero-popup {
@@ -1154,13 +1151,14 @@ footer::before {
 }
 
 .hero-popup:hover {
-  transform: translateY(-4px) scale(1.05);
+  transform: translateY(-8px) scale(1.08);
   background: linear-gradient(
     135deg,
     var(--accent-primary),
     var(--accent-secondary)
   );
   color: white;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Arrow/Triangle styles */
@@ -1169,7 +1167,7 @@ footer::before {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 8px;
+  border-width: 12px;
   transition: border-color 0.3s var(--easing);
 }
 
@@ -1181,36 +1179,36 @@ footer::before {
 /* Specific positioning for each popup and their animations */
 .hero-popup.top-left {
   top: 10%;
-  left: 0;
-  transform: translate(calc(-100% - 15px), 0);
+  left: 300px;
+  transform: translate(calc(-10% - 5px), 0);
 }
 .hero-popup.top-right {
   top: 10%;
-  right: 0;
-  transform: translate(calc(100% + 15px), 0);
+  right: 300px;
+  transform: translate(calc(10% + 5px), 0);
 }
 .hero-popup.bottom-left {
   bottom: 10%;
-  left: 0;
-  transform: translate(calc(-100% - 15px), 0);
+  left: 300px;
+  transform: translate(calc(-10% - 5px), 0);
 }
 .hero-popup.bottom-right {
   bottom: 10%;
-  right: 0;
-  transform: translate(calc(100% + 15px), 0);
+  right: 300px;
+  transform: translate(calc(10% + 5px), 0);
 }
 
 .hero-popup.top-left.active {
-  transform: translate(calc(-100% - 15px), 0) scale(1);
+  transform: translate(calc(-10% - 5px), 0) scale(1);
 }
 .hero-popup.top-right.active {
-  transform: translate(calc(100% + 15px), 0) scale(1);
+  transform: translate(calc(10% + 5px), 0) scale(1);
 }
 .hero-popup.bottom-left.active {
-  transform: translate(calc(-100% - 15px), 0) scale(1);
+  transform: translate(calc(-10% - 5px), 0) scale(1);
 }
 .hero-popup.bottom-right.active {
-  transform: translate(calc(100% + 15px), 0) scale(1);
+  transform: translate(calc(10% + 5px), 0) scale(1);
 }
 
 .hero-popup.top-left .popup-arrow {
