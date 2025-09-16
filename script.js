@@ -25,44 +25,52 @@ document.addEventListener("DOMContentLoaded", () => {
         title: "CodeManipulate",
         desc: "CodeManipulate is a comprehensive, AI-powered all-in-one developer platform designed to streamline coding workflows and enhance productivity for programmers of all levels. It automatically detects the programming language of any code snippet using advanced AI language detection, and allows seamless cross-language translation, supporting popular languages such as JavaScript, Python, Java, C#, C++, Go, Ruby, PHP, HTML, CSS, and more. Beyond language conversion, it provides powerful developer tools including a code formatter for clean and properly indented code, a minifier to optimize JavaScript and CSS for improved performance, a JSON formatter for better readability and debugging, and instant copy/download options for easy code management. With an intuitive and user-friendly interface, CodeManipulate enables developers to quickly paste, detect, translate, format, minify, and optimize code all in one place, saving time, reducing errors, and boosting efficiency. Whether you are a professional developer, student, or hobbyist, CodeManipulate simplifies complex coding tasks, accelerates development, and acts as a reliable assistant for all your coding needs.",
         tech: ["Html", "CSS", "Javascript", "API", "Node.js"],
-        demo: "#",
-        repo: "#",
+        demo: "https://codemanipulate.onrender.com/",
+        repo: "https://github.com/avdeshjadon/CodeManipulate",
       },
 
       crypto: {
-        title: "Crypto Portfolio Tracker",
-        desc: "A comprehensive full-stack application for tracking cryptocurrency portfolios, including advanced interactive charting, automated alerts, and secure blockchain wallet integration.",
-        tech: ["Next.js", "Chart.js", "Web3.js", "PostgreSQL", "Redis"],
-        demo: "#",
-        repo: "#",
+        title: "ComixAll",
+        desc: "Introducing a modern, fully responsive comic reader designed to offer an immersive and seamless experience for both readers and creators. The platform features a structured folder-based system, allowing easy organization and navigation of large comic collections, while the intuitive admin panel gives creators complete control to add, update, or manage content effortlessly. Powered by Firebase, it ensures real-time data synchronization, secure authentication, and fast, reliable backend performance. Cloudinary integration optimizes media storage and delivery, providing smooth image loading, automatic resizing, and high-quality visual rendering across all devices. Every aspect of the reader—from its responsive design to its robust backend architecture—is engineered to deliver a fast, engaging, and user-friendly experience, making it the perfect solution for managing and enjoying digital comics at scale.",
+        tech: [
+          "Html",
+          "CSS",
+          "Javascript",
+          "API",
+          "Node.js",
+          "Cloudinary",
+          "Firebase",
+          "Admin Pannel",
+        ],
+        demo: "https://avdeshjadon.github.io/ComixAll/",
+        repo: "https://github.com/avdeshjadon/ComixAll",
+      },
+       "interactive-art": {
+        title: "TouchTyping",
+        desc: "TouchTyping is a minimal, fully responsive web application designed to help users improve their typing speed and accuracy through structured practice. The app provides exercises for all key rows — Home Row, Top Row, Bottom Row, and the Full Keyboard — making it suitable for beginners learning proper finger placement as well as developers and professionals aiming to enhance their typing efficiency. With a clean and intuitive interface, real-time feedback, and responsive design across devices, TouchTyping offers an engaging and effective way to master touch typing skills. Its focus on simplicity and functionality ensures users can practice consistently and track their progress effortlessly, turning typing practice into a productive and enjoyable experience.",
+        tech: ["Html", "CSS", "Javascript"],
+        demo: "https://avdeshjadon.github.io/TouchTyping/",
+        repo: "https://github.com/avdeshjadon/TouchTyping",
       },
       "3d-config": {
-        title: "3D Product Configurator",
-        desc: "An immersive 3D configuration tool enabling users to customize product textures, materials, and dimensions in real-time, with AR export functionality.",
-        tech: ["Three.js", "GSAP", "Babylon.js", "AR.js", "Vue.js"],
-        demo: "#",
-        repo: "#",
+        title: "Panda Login Page",
+        desc: "A charming and fully responsive login and signup page featuring an animated panda UI that adds a playful and engaging touch to user interactions. Built with HTML, CSS, and JavaScript, the page combines smooth animations, intuitive form design, and responsive layouts to ensure a delightful experience across all devices. The animated panda reacts to user actions, creating an interactive and memorable interface, while the clean code structure allows easy customization and seamless integration into any web project. Perfect for enhancing user engagement and bringing a fun, friendly personality to authentication flows.",
+        tech: ["Html", "CSS", "Javascript"],
+        demo: "https://avdeshjadon.github.io/PandaLogin-SignUpPage/",
+        repo: "https://github.com/avdeshjadon/PandaLogin-SignUpPage",
+      },
+       "folio-v5": {
+        title: "Spotify Clone (Home Page)",
+        desc: "A pixel-perfect clone of the Spotify homepage, meticulously crafted using pure HTML and CSS to replicate the original design with high fidelity. Every element, from typography and color schemes to layout and spacing, has been carefully recreated to match Spotify’s sleek, modern aesthetic. The project showcases attention to detail, responsive design practices, and the ability to translate complex UIs into clean, maintainable code. Ideal for demonstrating front-end skills, this clone highlights proficiency in layout structuring, styling, and creating visually appealing interfaces without relying on JavaScript or external frameworks.",
+        tech: ["Html","CSS"],
+        demo: "https://avdeshjadon.github.io/Spotify-Home/",
+        repo: "https://github.com/avdeshjadon/Spotify-Home",
       },
       ecom: {
-        title: "Headless E-Commerce Platform",
-        desc: "A blazing-fast, modern storefront built with a JAMstack architecture for superior performance and scalability. Integrates with Stripe for payments and Sanity.io for content management.",
-        tech: ["Next.js", "Stripe", "Sanity.io", "GraphQL", "Tailwind CSS"],
-        demo: "#",
-        repo: "#",
-      },
-      "interactive-art": {
-        title: "Generative Art Explorer",
-        desc: "A creative coding experiment using WebGL to generate unique, interactive art pieces based on user input and audio reactivity. Built with Three.js and the Web Audio API.",
-        tech: ["Three.js", "WebGL", "Vite", "Web Audio API"],
-        demo: "#",
-        repo: "#",
-      },
-      "folio-v5": {
-        title: "Portfolio v5 (Archive)",
-        desc: "The fifth iteration of my personal portfolio. This version focused on brutalist design principles and advanced page transition animations using Framer Motion.",
-        tech: ["SvelteKit", "Framer Motion", "TypeScript", "Vercel"],
-        demo: "#",
-        repo: "#",
+        title: "WebIn",
+        desc: "WebIn is a lightweight, draggable browser extension that acts as a floating overlay, giving you instant access to all your most-used web tools without leaving the page. Designed for maximum convenience, it keeps coding platforms, research tools, AI chat interfaces, and even entertainment sites like YouTube just a click away. The intuitive draggable interface allows you to position the overlay anywhere on your screen, ensuring it never interrupts your workflow. By consolidating your favorite platforms into a single, accessible shortcut, WebIn streamlines productivity, enhances multitasking, and transforms the way you interact with the web, all while remaining fast, responsive, and unobtrusive.",
+        tech: ["Html", "CSS", "Javascript"],
+        repo: "https://github.com/avdeshjadon/WebIn",
       },
     },
     isReducedMotion: window.matchMedia("(prefers-reduced-motion: reduce)")
@@ -307,8 +315,70 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((l) => l.addEventListener("click", () => toggle(false)));
     }
 
-    initContactForm() {}
-    initBackToTop() {}
+    initContactForm() {
+      const form = document.getElementById("contactForm");
+      if (!form) return;
+      
+      const copyEmailBtn = document.getElementById("copyEmailBtn");
+      copyEmailBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(CONFIG.email);
+          this.notificationSystem.show("Email address copied!", 3000, "success");
+        } catch (err) {
+          this.notificationSystem.show("Failed to copy email.", 3000, "error");
+        }
+      });
+      
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Basic form validation
+        const name = form.querySelector('[name="name"]').value;
+        const email = form.querySelector('[name="email"]').value;
+        const subject = form.querySelector('[name="subject"]').value;
+        const message = form.querySelector('[name="message"]').value;
+        
+        if (!name || !email || !subject || !message) {
+            this.notificationSystem.show("Please fill out all fields.", 3000, "error");
+            return;
+        }
+
+        if (!UTILS.validateEmail(email)) {
+            this.notificationSystem.show("Please enter a valid email address.", 3000, "error");
+            return;
+        }
+
+        // Simulate form submission
+        setTimeout(() => {
+            this.notificationSystem.show("Message sent successfully!", 3000, "success");
+            form.reset();
+        }, 1000);
+      });
+    }
+
+    initBackToTop() {
+      const backToTopBtn = document.getElementById('back-to-top');
+      if (!backToTopBtn) return;
+      
+      const showButton = () => {
+        const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+        if (scrolled > 300) {
+          backToTopBtn.classList.add('active');
+        } else {
+          backToTopBtn.classList.remove('active');
+        }
+      };
+
+      const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      };
+      
+      window.addEventListener('scroll', UTILS.throttle(showButton, CONFIG.throttleDelay));
+      backToTopBtn.addEventListener('click', scrollToTop);
+    }
 
     initProjectModals() {
       const modal = document.getElementById("project-modal");

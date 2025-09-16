@@ -393,7 +393,7 @@ nav a:focus-visible {
 .modal-content {
   background: var(--glass-strong);
   backdrop-filter: var(--blur-heavy);
-  border: 1px solid var(--glass-border);
+  border: 1.5px solid var(--glass-border);
   border-radius: var(--radius-lg);
   max-width: 90vw;
   max-height: 90vh;
@@ -401,42 +401,63 @@ nav a:focus-visible {
   padding: var(--gap-lg);
   position: relative;
   transform: scale(0.9);
-  transition: transform 0.3s var(--easing);
-  box-shadow: var(--shadow-strong);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1), 0 5px 15px rgba(0, 0, 0, 0.05);
+  animation: modal-slide-in 0.5s var(--easing-bounce) forwards;
 }
 
 .modal-overlay.open .modal-content {
   transform: scale(1);
+  animation: none;
+}
+
+@keyframes modal-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .modal-close {
   position: absolute;
   top: var(--gap-sm);
   right: var(--gap-sm);
-  background: none;
-  border: none;
+  background: var(--glass-subtle);
+  border: 1px solid var(--glass-border);
   color: var(--text-secondary);
   cursor: pointer;
-  font-size: 24px;
-  width: 32px;
-  height: 32px;
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  transition: all var(--timing-fast);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 .modal-close:hover {
-  background: var(--glass-subtle);
-  color: var(--text-primary);
-  transform: rotate(90deg);
+  background: var(--accent-primary);
+  color: white;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: var(--shadow-subtle);
 }
 
 .modal-title {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(
+    90deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
   margin-bottom: var(--gap-md);
-  color: var(--text-primary);
+  letter-spacing: -0.5px;
 }
 
 .modal-desc {
@@ -466,6 +487,16 @@ nav a:focus-visible {
 .modal-links a {
   padding: 12px 20px;
   text-decoration: none;
+}
+
+.modal-links a {
+  transition: transform 0.2s var(--easing-bounce), box-shadow 0.2s var(--easing);
+  box-shadow: var(--shadow-subtle);
+}
+
+.modal-links a:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--shadow-strong);
 }
 
 main {
@@ -830,6 +861,20 @@ h1.animated .char {
   text-align: center;
 }
 
+.project-card .view-details-btn.plain {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  box-shadow: none;
+  transition: all var(--timing-fast) ease;
+}
+
+.project-card .view-details-btn.plain:hover {
+  background: var(--glass-strong);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: var(--shadow-subtle);
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -884,6 +929,10 @@ select {
   transition: all var(--timing-medium) var(--easing);
 }
 
+textarea {
+  resize: none;
+}
+
 input:focus,
 textarea:focus,
 select:focus {
@@ -909,7 +958,7 @@ textarea::placeholder {
   gap: var(--gap-md);
 }
 
-.form-row input {
+.form-row .form-group {
   flex: 1;
 }
 
