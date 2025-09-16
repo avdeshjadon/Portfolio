@@ -206,9 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
       
       const hideAllPopups = () => {
         popups.forEach(popup => {
-            popup.style.opacity = '0';
-            popup.style.visibility = 'hidden';
-            popup.style.transform = 'scale(0.8)';
+            popup.classList.remove('active');
         });
       };
 
@@ -237,8 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (isDown && isRight) {
           newImage = 'avdesh-down-right.png';
           popupClass = 'bottom-right';
-        } else {
-            newImage = 'avdesh.png';
         }
 
         if (currentImage !== newImage) {
@@ -246,16 +242,12 @@ document.addEventListener("DOMContentLoaded", () => {
           currentImage = newImage;
         }
 
-        // Hide all popups first
         hideAllPopups();
         
-        // Only show a popup if a specific direction image is displayed
         if (popupClass) {
           const popupToShow = document.querySelector(`.hero-popup.${popupClass}`);
           if (popupToShow) {
-            popupToShow.style.opacity = '1';
-            popupToShow.style.visibility = 'visible';
-            popupToShow.style.transform = 'scale(1)';
+            popupToShow.classList.add('active');
           }
         }
       }, 50);
