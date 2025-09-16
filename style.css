@@ -930,136 +930,15 @@ textarea::placeholder {
 footer {
   padding: var(--gap-lg) 20px;
   margin-top: 80px;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--glass-border);
+  background: transparent;
+  border-top: 1px solid transparent;
   position: relative;
   overflow: hidden;
 }
 
 footer::before {
   content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: radial-gradient(
-      circle at 10% 10%,
-      rgba(79, 70, 229, 0.05),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 90% 90%,
-      rgba(236, 72, 153, 0.04),
-      transparent 50%
-    );
-  pointer-events: none;
-}
-
-.footer-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
-  gap: var(--gap-lg);
-  padding: var(--gap-lg) 0;
-  position: relative;
-  z-index: 1;
-}
-
-.footer-column .footer-title {
-  font-size: 18px;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-top: 0;
-  margin-bottom: var(--gap-md);
-  position: relative;
-  display: inline-block;
-}
-
-.footer-tagline {
-  color: var(--text-secondary);
-  margin: 0 0 8px 0;
-  font-size: 14px;
-}
-
-.footer-motto {
-  color: var(--text-secondary);
-  font-size: 16px;
-  font-style: normal;
-  margin: 0;
-  line-height: 1.6;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 16px;
-  transition: all var(--timing-fast) ease;
-  display: inline-block;
-}
-
-.footer-links a:hover {
-  color: var(--accent-primary);
-  transform: translateX(5px) scale(1.05);
-}
-
-.footer-services span {
-  font-size: 15px;
-  color: var(--text-secondary);
-  cursor: default;
-}
-
-.footer-contact li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.footer-contact svg {
-  width: 18px;
-  height: 18px;
-  fill: var(--text-secondary);
-}
-
-#footer-socials-container {
-  margin-top: var(--gap-sm);
-}
-
-.socials {
-  display: flex;
-  gap: 16px;
-}
-
-.social {
-  color: var(--text-secondary);
-  background: var(--glass-subtle);
-  border: 1px solid var(--glass-border);
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
-  border-radius: var(--radius-sm);
-  text-decoration: none;
-  transition: all var(--timing-medium) var(--easing-bounce);
-}
-
-.social:hover {
-  color: white;
-  transform: translateY(-4px) scale(1.1);
-  background: linear-gradient(
-    135deg,
-    var(--accent-primary),
-    var(--accent-secondary)
-  );
-  box-shadow: var(--shadow-strong);
+  display: none;
 }
 
 .footer-bottom {
@@ -1632,7 +1511,7 @@ footer::before {
   .footer-container {
     grid-template-columns: 1fr;
     gap: var(--gap-md);
-    padding: var(--gap-md) 0;
+    padding: var(--gap-sm) 0;
   }
 
   .footer-column .footer-title {
@@ -1692,7 +1571,7 @@ footer::before {
     height: 40px;
     bottom: 20px;
     right: 20px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .hero-popup {
@@ -1702,97 +1581,6 @@ footer::before {
   .pre {
     font-size: 16px;
     letter-spacing: 4px;
-  }
-}
-
-@media (max-width: 480px) {
-  :root {
-    --gap-sm: 10px;
-    --gap-md: 14px;
-    --gap-lg: 20px;
-  }
-
-  body {
-    font-size: 14px;
-  }
-
-  header {
-    padding: 6px 12px;
-  }
-
-  .logo .mark {
-    width: 28px;
-    height: 28px;
-  }
-
-  .logo .name {
-    font-size: 13px;
-  }
-
-  .hero-image-wrapper {
-    height: 220px;
-  }
-
-  h1 {
-    font-size: clamp(1.5rem, 10vw, 2.2rem);
-  }
-
-  .sub {
-    font-size: 14px;
-    padding: 0 5px;
-  }
-
-  .cta {
-    padding: 10px 16px;
-    font-size: 13px;
-  }
-
-  .section-title {
-    font-size: 16px;
-  }
-
-  .card {
-    padding: 12px;
-  }
-
-  .card .title {
-    font-size: 15px;
-  }
-
-  .card .desc {
-    font-size: 13px;
-  }
-
-  .skill {
-    padding: 6px 10px;
-    font-size: 11px;
-  }
-
-  .project-card {
-    padding: var(--gap-sm);
-  }
-
-  .modal-content {
-    padding: var(--gap-sm);
-  }
-
-  .footer-container {
-    padding: var(--gap-sm) 0;
-  }
-
-  .socials {
-    gap: 8px;
-  }
-
-  .social {
-    width: 36px;
-    height: 36px;
-  }
-
-  #back-to-top {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
   }
 }
 

@@ -283,9 +283,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (document.getElementById("contact-socials-container")) {
         document.getElementById("contact-socials-container").innerHTML = h;
       }
-      if (document.getElementById("footer-socials-container")) {
-        document.getElementById("footer-socials-container").innerHTML = h;
-      }
     }
 
     initMobileMenu() {
@@ -345,9 +342,12 @@ document.addEventListener("DOMContentLoaded", () => {
       openModalButtons.forEach((button) => {
         button.addEventListener("click", (e) => {
           e.preventDefault();
-          const projectKey = e.currentTarget.dataset.project;
-          if (projectData[projectKey]) {
-            openModal(projectData[projectKey]);
+          const projectCard = e.currentTarget.closest(".project-card");
+          if (projectCard) {
+            const projectKey = projectCard.dataset.project;
+            if (projectData[projectKey]) {
+              openModal(projectData[projectKey]);
+            }
           }
         });
       });
