@@ -491,6 +491,8 @@ section {
   opacity: 0;
   animation: fadeInUp 0.8s var(--easing) 0.2s forwards;
   will-change: transform, opacity;
+  width: 100%;
+  max-width: 400px;
 }
 .hero-glow {
   position: absolute;
@@ -514,17 +516,17 @@ section {
   opacity: 0.5;
 }
 .hero-image {
-  max-width: 400px;
   width: 100%;
   height: auto;
+  object-fit: contain;
   filter: drop-shadow(0 20px 25px rgba(0, 0, 0, 0.1));
-  transition: transform var(--timing-medium) var(--easing-bounce),
-    filter var(--timing-medium) var(--easing);
+  /* Remove transition for transform to disable tilt animation */
   will-change: transform, filter;
 }
+/* Remove all hover effects */
 .hero-image:hover {
-  transform: translateY(-10px) rotate(3deg) scale(1.03);
-  filter: drop-shadow(0 30px 30px rgba(79, 70, 229, 0.2));
+  /* Remove transform to disable tilt */
+  /* Remove filter to disable glow on hover */
 }
 .eyebrow {
   color: var(--accent-primary);

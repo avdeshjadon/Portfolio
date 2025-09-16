@@ -128,7 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
         this.notificationSystem = new NotificationSystem();
         this.systems.push(new ThemeSystem());
         this.systems.push(new AnimationSystem());
-        this.systems.push(new TiltSystem());
         this.systems.push(
           new ScrollSystem(document.getElementById("siteHeader"))
         );
@@ -197,11 +196,50 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initInteractiveGlow() {
       const wrapper = document.querySelector(".hero-image-wrapper");
-      if (!wrapper || CONFIG.isReducedMotion) return;
-      wrapper.addEventListener("mousemove", (e) => {
+      const heroImage = document.querySelector(".hero-image");
+      if (!wrapper || !heroImage || CONFIG.isReducedMotion) return;
+
+      const originalSrc = heroImage.src;
+      let currentImage = 'avdesh.png';
+
+      const changeImage = UTILS.throttle((e) => {
         const rect = wrapper.getBoundingClientRect();
         wrapper.style.setProperty("--glow-x", `${e.clientX - rect.left}px`);
         wrapper.style.setProperty("--glow-y", `${e.clientY - rect.top}px`);
+
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        const isUp = e.clientY < centerY;
+        const isDown = e.clientY > centerY;
+        const isLeft = e.clientX < centerX;
+        const isRight = e.clientX > centerX;
+        
+        let newImage = 'avdesh.png';
+
+        if (isUp && isLeft) {
+          newImage = 'avdesh-up-left.png';
+        } else if (isUp && isRight) {
+          newImage = 'avdesh-up-right.png';
+        } else if (isDown && isLeft) {
+          newImage = 'avdesh-down-left.png';
+        } else if (isDown && isRight) {
+          newImage = 'avdesh-down-right.png';
+        } else {
+            newImage = 'avdesh.png';
+        }
+
+        if (currentImage !== newImage) {
+          heroImage.src = `images/${newImage}`;
+          currentImage = newImage;
+        }
+      }, 50);
+
+      wrapper.addEventListener("mousemove", changeImage);
+
+      wrapper.addEventListener('mouseleave', () => {
+        heroImage.src = originalSrc;
+        currentImage = originalSrc;
       });
     }
 
@@ -359,10 +397,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  class CursorSystem {}
-  class Particle {}
-  class ParallaxSystem {}
-
   class AnimationSystem {
     constructor() {
       this.obs = new IntersectionObserver(this.handle.bind(this), {
@@ -380,37 +414,6 @@ document.addEventListener("DOMContentLoaded", () => {
         e.style.setProperty("--stagger-delay", `${i * 80}ms`);
         e.classList.add("inview");
         obs.unobserve(e);
-      });
-    }
-  }
-
-  class TiltSystem {
-    constructor() {
-      document.querySelectorAll(".tilt").forEach((e) => this.create(e));
-    }
-    create(el) {
-      if (CONFIG.isReducedMotion) return;
-      let x = 0,
-        y = 0,
-        tX = 0,
-        tY = 0;
-      const u = () => {
-        x = UTILS.lerp(x, tX, CONFIG.tilt.returnSpeed);
-        y = UTILS.lerp(y, tY, CONFIG.tilt.returnSpeed);
-        el.style.transform = `perspective(1000px) rotateX(${x}deg) rotateY(${y}deg)`;
-        if (Math.abs(x - tX) > 0.01 || Math.abs(y - tY) > 0.01)
-          requestAnimationFrame(u);
-      };
-      el.addEventListener("mousemove", (e) => {
-        const r = el.getBoundingClientRect();
-        tX = ((e.clientY - r.top) / r.height - 0.5) * -CONFIG.tilt.strength;
-        tY = ((e.clientX - r.left) / r.width - 0.5) * CONFIG.tilt.strength;
-        requestAnimationFrame(u);
-      });
-      el.addEventListener("mouseleave", () => {
-        tX = 0;
-        tY = 0;
-        requestAnimationFrame(u);
       });
     }
   }
