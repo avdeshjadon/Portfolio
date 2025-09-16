@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
         span.style.setProperty("--char-delay", `${index * 50}ms`);
         headline.appendChild(span);
       });
-      setTimeout(() => headline.classList.add("animated"), 500);
+      setTimeout(() => headline.classList.add("animated"), 800);
     }
 
     initInteractiveGlow() {
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       const changeImageAndPopup = UTILS.throttle((e) => {
-        clearTimeout(leaveTimeout); // Clear the timeout if the mouse re-enters
+        clearTimeout(leaveTimeout);
         const rect = wrapper.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
           heroImage.src = originalSrc;
           currentImage = originalSrc;
           hideAllPopups();
-        }, 50); // 300ms delay to give time for cursor to reach pop-up
+        }, 50);
       });
       
       popups.forEach(popup => {
