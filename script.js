@@ -22,12 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
     projects: {
       neural: {
-        title: "Neural Dashboard",
-        desc: "An advanced AI-powered analytics platform featuring real-time data visualization, machine learning-driven predictive insights, and seamless live updates.",
-        tech: ["React", "TensorFlow.js", "Socket.io", "D3.js", "Node.js"],
+        title: "CodeManipulate",
+        desc: "CodeManipulate is a comprehensive, AI-powered all-in-one developer platform designed to streamline coding workflows and enhance productivity for programmers of all levels. It automatically detects the programming language of any code snippet using advanced AI language detection, and allows seamless cross-language translation, supporting popular languages such as JavaScript, Python, Java, C#, C++, Go, Ruby, PHP, HTML, CSS, and more. Beyond language conversion, it provides powerful developer tools including a code formatter for clean and properly indented code, a minifier to optimize JavaScript and CSS for improved performance, a JSON formatter for better readability and debugging, and instant copy/download options for easy code management. With an intuitive and user-friendly interface, CodeManipulate enables developers to quickly paste, detect, translate, format, minify, and optimize code all in one place, saving time, reducing errors, and boosting efficiency. Whether you are a professional developer, student, or hobbyist, CodeManipulate simplifies complex coding tasks, accelerates development, and acts as a reliable assistant for all your coding needs.",
+        tech: ["Html", "CSS", "Javascript", "API", "Node.js"],
         demo: "#",
         repo: "#",
       },
+
       crypto: {
         title: "Crypto Portfolio Tracker",
         desc: "A comprehensive full-stack application for tracking cryptocurrency portfolios, including advanced interactive charting, automated alerts, and secure blockchain wallet integration.",
