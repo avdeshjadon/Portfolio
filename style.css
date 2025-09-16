@@ -1139,6 +1139,7 @@ footer::before {
   white-space: nowrap;
   pointer-events: none;
   box-shadow: var(--shadow-subtle);
+  transform: scale(0.8);
 }
 
 /* Positioning and animation when active */
@@ -1170,30 +1171,43 @@ footer::before {
 }
 
 .hero-popup.active:hover .popup-arrow {
-    border-color: transparent transparent var(--accent-primary) transparent;
+  border-color: transparent transparent var(--accent-primary) transparent;
 }
 
 
 /* Specific positioning for each popup and their animations */
 .hero-popup.top-left {
-  top: 0;
+  top: 10%;
   left: 0;
-  transform: translate(calc(-100% - 15px), calc(-100% - 15px));
+  transform: translate(calc(-100% - 15px), 0);
 }
 .hero-popup.top-right {
-  top: 0;
+  top: 10%;
   right: 0;
-  transform: translate(calc(100% + 15px), calc(-100% - 15px));
+  transform: translate(calc(100% + 15px), 0);
 }
 .hero-popup.bottom-left {
-  bottom: 0;
+  bottom: 10%;
   left: 0;
-  transform: translate(calc(-100% - 15px), calc(100% + 15px));
+  transform: translate(calc(-100% - 15px), 0);
 }
 .hero-popup.bottom-right {
-  bottom: 0;
+  bottom: 10%;
   right: 0;
-  transform: translate(calc(100% + 15px), calc(100% + 15px));
+  transform: translate(calc(100% + 15px), 0);
+}
+
+.hero-popup.top-left.active {
+  transform: translate(calc(-100% - 15px), 0) scale(1);
+}
+.hero-popup.top-right.active {
+  transform: translate(calc(100% + 15px), 0) scale(1);
+}
+.hero-popup.bottom-left.active {
+  transform: translate(calc(-100% - 15px), 0) scale(1);
+}
+.hero-popup.bottom-right.active {
+  transform: translate(calc(100% + 15px), 0) scale(1);
 }
 
 .hero-popup.top-left .popup-arrow {
@@ -1224,9 +1238,19 @@ footer::before {
   transform: translateX(50%);
 }
 
-/* No popups on initial hero image hover */
-.hero-image-wrapper:hover .hero-popup {
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.8);
+.hero-popup.active:hover .popup-arrow {
+  border-color: transparent transparent var(--accent-primary) transparent;
+}
+.hero-popup.active:hover {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  color: white;
+  transform: translateY(-4px) scale(1.05);
+}
+.hero-popup.active.bottom-left:hover .popup-arrow,
+.hero-popup.active.bottom-right:hover .popup-arrow {
+  border-color: var(--accent-primary) transparent transparent transparent;
 }
