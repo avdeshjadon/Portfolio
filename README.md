@@ -1,50 +1,41 @@
-# 🌟 Avdesh Jadon - Portfolio
+# 🚀 Avdesh Jadon | Software Developer & AI Enthusiast
 
-[![Portfolio](https://img.shields.io/badge/Portfolio-avdeshjadon.com-blue)](https://avdeshjadon.com)
-[![GitHub](https://img.shields.io/badge/GitHub-avdeshjadon-green)](https://github.com/avdeshjadon)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-avdeshjadon-blue)](https://linkedin.com/in/avdeshjadon)
+<div align="center">
 
-Welcome to my personal portfolio repository!  
-This project is a dynamic showcase of my skills, projects, and passion for technology, designed to leave a lasting impression.
+[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-avdeshjadon.com-4A90E2?style=for-the-badge&logo=safari&logoColor=white)](https://avdeshjadon.github.io/Portfolio/)
+[![GitHub](https://img.shields.io/badge/GitHub-avdeshjadon-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/avdeshjadon)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-avdeshjadon-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/avdesh-jadon-8a2968291/)
+[![X](https://img.shields.io/badge/X-avdeshjadon-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/AvdeshJado26477)
 
-## 🚀 About Me
-I'm **Avdesh Jadon**, a passionate **Software Developer** from India, currently in my 4th year (5th semester) of pursuing a **Computer Science** degree.  
-I specialize in building **AI-powered tools**, **automation systems**, and **full-stack applications**. My goal is to create innovative solutions that solve real-world problems and push the boundaries of technology.
+![Profile Views](https://komarev.com/ghpvc/?username=avdeshjadon&style=for-the-badge&color=4A90E2)
+[![Stars](https://img.shields.io/github/stars/avdeshjadon?style=for-the-badge&color=gold)](https://github.com/avdeshjadon)
 
-## ✨ Features
-- 🌐 **Modern UI**: Clean, intuitive, and visually stunning design.  
-- 📱 **Fully Responsive**: Optimized for seamless viewing on mobile, tablet, and desktop.  
-- ⚡ **High Performance**: Fast-loading and efficient for an exceptional user experience.  
-- 📊 **Project Showcase**: Curated collection of my work with live demos and source code.  
-- 📬 **Easy Connectivity**: Multiple ways to connect for collaborations or opportunities.
+</div>
 
-## 🛠️ Tech Stack
-| Category           | Technologies                              |
-|--------------------|-------------------------------------------|
-| **Frontend**       | HTML5, CSS3, JavaScript                   |
-| **Tools/Platforms**| Git, GitHub, Vercel, Netlify, Figma       |  
+---
 
-## 📌 Portfolio Sections
-- **🏠 Home**: A vibrant hero section introducing who I am and what I do.  
-- **ℹ️ About Me**: My journey, technical skills, and vision for the future.  
-- **💻 Projects**: Detailed showcase of my best works with live demos and GitHub links.  
-- **📬 Contact**: Connect with me via email, social media, or my portfolio website.
+## 🎯 **Vision Statement**
+> *"Transforming ideas into intelligent digital solutions that shape the future"*
 
-## 🌟 Featured Projects
-| Project                     | Description                                                                 | Live Demo                                  | Source Code                                         |
-|-----------------------------|-----------------------------------------------------------------------------|--------------------------------------------|----------------------------------------------------|
-| **AI-Powered Chatbot**      | A conversational AI tool built with Python and TensorFlow, integrated into a web app. | [View Demo](https://chatbot.avdeshjadon.com) | [GitHub](https://github.com/avdeshjadon/chatbot)   |
-| **Task Automation Suite**   | A Python-based tool to streamline repetitive tasks with a user-friendly interface. | [View Demo](https://automation.avdeshjadon.com) | [GitHub](https://github.com/avdeshjadon/automation-suite) |
-| **E-Commerce Platform**     | A responsive full-stack e-commerce app built with React, Node.js, and MongoDB. | [View Demo](https://shop.avdeshjadon.com) | [GitHub](https://github.com/avdeshjadon/ecommerce) |
+**Welcome to my digital playground!** I'm a passionate **Software Developer** and **AI Enthusiast** from India, currently in my 4th year pursuing Computer Science. I specialize in crafting innovative AI-powered applications, building scalable automation systems, and creating immersive full-stack experiences that solve real-world challenges.
 
-## 📬 Get in Touch
-- 📧 **Email**: [hello@avdeshjadon.com](mailto:hello@avdeshjadon.com)  
-- 🌍 **Portfolio Website**: [avdeshjadon.com](https://avdeshjadon.com)  
-- 🐙 **GitHub**: [github.com/avdeshjadon](https://github.com/avdeshjadon)  
-- 💼 **LinkedIn**: [linkedin.com/in/avdeshjadon](https://linkedin.com/in/avdeshjadon)  
-- 🐦 **X Profile**: [x.com/avdeshjadon](https://x.com/avdeshjadon)  
+---
 
-## 🛠️ Setup Instructions
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/avdeshjadon/portfolio.git
+## 🎨 **Portfolio Highlights**
+
+### 📐 **Design Philosophy**
+- **🎨 Aesthetic Excellence**: Clean, modern, and visually captivating interface
+- **🔄 Seamless Interactions**: Smooth animations and intuitive navigation
+- **📊 Data-Driven**: Analytics integration for continuous improvement
+- **♿ Accessibility First**: WCAG compliant for inclusive user experience
+
+---
+
+## 📈 **GitHub Analytics**
+
+<div align="center">
+
+<img height="180em" src="https://github-readme-stats.vercel.app/api?username=avdeshjadon&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avdeshjadon&layout=compact&langs_count=7&theme=tokyonight"/>
+
+</div>
