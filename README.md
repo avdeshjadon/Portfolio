@@ -29,6 +29,10 @@
 - **📊 Data-Driven**: Analytics integration for continuous improvement
 - **♿ Accessibility First**: WCAG compliant for inclusive user experience
 
+### 🖥️ **Live View**
+You can view a live version of this project here:
+[![Live View](https://img.shields.io/badge/Live_View-4A90E2?style=for-the-badge&logo=github&logoColor=white)](https://avdeshjadon.github.io/Portfolio/)
+
 ---
 
 ## 📈 **GitHub Analytics**
