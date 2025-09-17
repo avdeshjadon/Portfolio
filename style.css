@@ -87,7 +87,7 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   background: linear-gradient(
     135deg,
     var(--bg-primary) 0%,
@@ -625,7 +625,7 @@ section {
 }
 
 h1 {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: clamp(2rem, 6vw, 4rem);
   margin: 0;
   line-height: 1.2;
@@ -654,7 +654,7 @@ h1.animated .char {
 }
 
 .sub {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   font-size: 18px;
   color: var(--text-secondary);
   line-height: 1.2;
@@ -1109,7 +1109,6 @@ footer::before {
   outline: none;
 }
 
-/* Updated "Thinking Bubble" styles */
 .hero-popup {
   position: absolute;
   opacity: 0;
@@ -1162,10 +1161,20 @@ footer::before {
   background: var(--glass-subtle);
   border-radius: 50%;
   border: 1px solid var(--glass-border);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 0.4s var(--easing), transform 0.4s var(--easing);
+}
+
+.hero-popup:hover .bubble {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
 }
 
 .bubble-1 {
@@ -1173,15 +1182,34 @@ footer::before {
   height: 12px;
 }
 
-.bubble-2 {
-  width: 16px;
-  height: 16px;
-}
-
 .bubble-3 {
   width: 20px;
   height: 20px;
 }
+
+.bubble-4 {
+  width: 16px;
+  height: 16px;
+  margin: 0 10px;
+  background: var(--glass-subtle);
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.4s var(--easing), transform 0.4s var(--easing);
+}
+
+.hero-popup:hover .bubble-4 {
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
+  box-shadow: var(--shadow-strong);
+  transform: translateY(-2px);
+}
+
 
 .hero-popup.active {
   opacity: 1;
@@ -1197,15 +1225,18 @@ footer::before {
 .hero-popup.active .bubble-1 {
   animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s forwards;
 }
-.hero-popup.active .bubble-2 {
+
+.hero-popup.active .bubble-3 {
   animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
 }
-.hero-popup.active .bubble-3 {
-  animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+
+.hero-popup.active .bubble-4 {
+    animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
 }
 
 .hero-popup.active .main-bubble {
-  animation: fade-in-scale 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+  animation: fade-in-scale 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s
+    forwards;
 }
 
 @keyframes pop-in {
@@ -1239,6 +1270,7 @@ footer::before {
 .hero-popup.top-right {
   top: 12%;
   right: 250px;
+  flex-direction: row;
 }
 
 .hero-popup.bottom-left {
@@ -1360,13 +1392,13 @@ footer::before {
     width: 10px;
     height: 10px;
   }
-  .bubble-2 {
-    width: 14px;
-    height: 14px;
-  }
   .bubble-3 {
     width: 18px;
     height: 18px;
+  }
+  .bubble-4 {
+    width: 14px;
+    height: 14px;
   }
 
   .hero-popup.top-left,

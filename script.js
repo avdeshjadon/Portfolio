@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         UTILS.srOnly();
         this.preloader = new PreloaderSystem();
+        this.preloader.init();
         this.notificationSystem = new NotificationSystem();
         this.systems.push(new ThemeSystem());
         this.systems.push(new AnimationSystem());
@@ -569,7 +570,6 @@ document.addEventListener("DOMContentLoaded", () => {
   class PreloaderSystem {
     constructor() {
       this.el = document.getElementById("preloader");
-      this.init();
     }
     init() {
       if (document.readyState === "complete")
