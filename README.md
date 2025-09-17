@@ -17,7 +17,7 @@
 ## 🎯 **Vision Statement**
 > *"Transforming ideas into intelligent digital solutions that shape the future"*
 
-**Welcome to my digital playground!** I'm a passionate **Software Developer** and **AI Enthusiast** from India, currently in my 4th year pursuing Computer Science. I specialize in crafting innovative AI-powered applications, building scalable automation systems, and creating immersive full-stack experiences that solve real-world challenges.
+**Welcome to my digital playground!** I'm a passionate **Software Developer** and **AI Enthusiast** from India, currently in my 3rd year pursuing Computer Science. I specialize in crafting innovative AI-powered applications, building scalable automation systems, and creating immersive full-stack experiences that solve real-world challenges.
 
 ---
 
@@ -31,7 +31,7 @@
 
 ### 🖥️ **Live View**
 You can view a live version of this project here:
-[![Live View](https://img.shields.io/badge/Live_View-4A90E2?style=for-the-badge&logo=github&logoColor=white)](https://avdeshjadon.github.io/Portfolio/)
+[🔗 Live View](https://avdeshjadon.github.io/Portfolio/)
 
 ---
 
