@@ -1109,36 +1109,36 @@ footer::before {
   outline: none;
 }
 
+/* Updated "Thinking Bubble" styles */
 .hero-popup {
   position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity, visibility;
+  transition: opacity 0.6s var(--easing-bounce), transform 0.6s var(--easing);
+  z-index: 20;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-popup .main-bubble {
   padding: 24px 34px;
   font-size: 18px;
   font-weight: 600;
   color: var(--text-primary);
   border-radius: 28px;
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--glass-subtle);
   backdrop-filter: blur(25px) saturate(200%);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.6), 0 0 40px rgba(236, 72, 153, 0.4),
-    inset 0 0 25px rgba(255, 255, 255, 0.15);
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.8) translateY(20px);
+  border: 1.5px solid var(--glass-border);
+  box-shadow: var(--shadow-subtle);
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-  overflow: hidden;
-  z-index: 20;
-  cursor: pointer;
+  white-space: nowrap;
 }
 
-.hero-popup.active {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1) translateY(0);
-  animation: floaty 4s ease-in-out infinite;
-}
-
-.hero-popup:hover {
-  transform: translateY(-10px) scale(1.08);
+.hero-popup:hover .main-bubble {
+  transform: translateY(-8px) scale(1.05);
   color: #f5f7fa;
   background: linear-gradient(
     135deg,
@@ -1149,70 +1149,91 @@ footer::before {
     inset 0 0 30px rgba(255, 255, 255, 0.25);
 }
 
-.hero-popup::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: conic-gradient(
-    from 180deg at 50% 50%,
-    rgba(99, 102, 241, 0.3),
-    rgba(236, 72, 153, 0.3),
-    rgba(255, 255, 255, 0.15),
-    transparent 75%
-  );
-  animation: rotateAura 12s linear infinite;
-  z-index: -1;
-  filter: blur(60px);
+.thinking-bubbles {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.6s var(--easing), transform 0.6s var(--easing);
 }
 
-.hero-popup::after {
-  content: "";
-  position: absolute;
-  width: 180%;
-  height: 180%;
-  top: -40%;
-  left: -40%;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.25) 1px,
-    transparent 1px
-  );
-  background-size: 40px 40px;
-  animation: sparkMove 8s linear infinite;
-  z-index: -2;
+.bubble {
+  background: var(--glass-subtle);
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.4s var(--easing), transform 0.4s var(--easing);
 }
 
-@keyframes floaty {
-  0%,
-  100% {
+.bubble-1 {
+  width: 12px;
+  height: 12px;
+}
+
+.bubble-2 {
+  width: 16px;
+  height: 16px;
+}
+
+.bubble-3 {
+  width: 20px;
+  height: 20px;
+}
+
+.hero-popup.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.hero-popup.active .thinking-bubbles {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hero-popup.active .bubble-1 {
+  animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s forwards;
+}
+.hero-popup.active .bubble-2 {
+  animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+.hero-popup.active .bubble-3 {
+  animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.hero-popup.active .main-bubble {
+  animation: fade-in-scale 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+}
+
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
     transform: scale(1) translateY(0);
-  }
-  50% {
-    transform: scale(1.05) translateY(-8px);
-  }
-}
-
-@keyframes rotateAura {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes sparkMove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(40px, 40px);
   }
 }
 
 .hero-popup.top-left {
   top: 12%;
   left: 250px;
+  flex-direction: row-reverse;
 }
 
 .hero-popup.top-right {
@@ -1223,11 +1244,14 @@ footer::before {
 .hero-popup.bottom-left {
   bottom: 12%;
   left: 250px;
+  flex-direction: row-reverse;
+  align-items: flex-start;
 }
 
 .hero-popup.bottom-right {
   bottom: 12%;
   right: 250px;
+  align-items: flex-start;
 }
 
 @media (max-width: 1024px) and (min-width: 769px) {
@@ -1325,8 +1349,24 @@ footer::before {
   }
 
   .hero-popup {
-    padding: 20px 28px;
     font-size: 16px;
+    gap: 6px;
+  }
+  .hero-popup .main-bubble {
+    padding: 20px 28px;
+  }
+
+  .bubble-1 {
+    width: 10px;
+    height: 10px;
+  }
+  .bubble-2 {
+    width: 14px;
+    height: 14px;
+  }
+  .bubble-3 {
+    width: 18px;
+    height: 18px;
   }
 
   .hero-popup.top-left,

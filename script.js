@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         demo: "https://avdeshjadon.github.io/ComixAll/",
         repo: "https://github.com/avdeshjadon/ComixAll",
       },
-       "interactive-art": {
+      "interactive-art": {
         title: "TouchTyping",
         desc: "TouchTyping is a minimal, fully responsive web application designed to help users improve their typing speed and accuracy through structured practice. The app provides exercises for all key rows — Home Row, Top Row, Bottom Row, and the Full Keyboard — making it suitable for beginners learning proper finger placement as well as developers and professionals aiming to enhance their typing efficiency. With a clean and intuitive interface, real-time feedback, and responsive design across devices, TouchTyping offers an engaging and effective way to master touch typing skills. Its focus on simplicity and functionality ensures users can practice consistently and track their progress effortlessly, turning typing practice into a productive and enjoyable experience.",
         tech: ["Html", "CSS", "Javascript"],
@@ -59,10 +59,10 @@ document.addEventListener("DOMContentLoaded", () => {
         demo: "https://avdeshjadon.github.io/PandaLogin-SignUpPage/",
         repo: "https://github.com/avdeshjadon/PandaLogin-SignUpPage",
       },
-       "folio-v5": {
+      "folio-v5": {
         title: "Spotify Clone (Home Page)",
         desc: "A pixel-perfect clone of the Spotify homepage, meticulously crafted using pure HTML and CSS to replicate the original design with high fidelity. Every element, from typography and color schemes to layout and spacing, has been carefully recreated to match Spotify’s sleek, modern aesthetic. The project showcases attention to detail, responsive design practices, and the ability to translate complex UIs into clean, maintainable code. Ideal for demonstrating front-end skills, this clone highlights proficiency in layout structuring, styling, and creating visually appealing interfaces without relying on JavaScript or external frameworks.",
-        tech: ["Html","CSS"],
+        tech: ["Html", "CSS"],
         demo: "https://avdeshjadon.github.io/Spotify-Home/",
         repo: "https://github.com/avdeshjadon/Spotify-Home",
       },
@@ -318,66 +318,91 @@ document.addEventListener("DOMContentLoaded", () => {
     initContactForm() {
       const form = document.getElementById("contactForm");
       if (!form) return;
-      
+
       const copyEmailBtn = document.getElementById("copyEmailBtn");
       copyEmailBtn.addEventListener("click", async () => {
         try {
           await navigator.clipboard.writeText(CONFIG.email);
-          this.notificationSystem.show("Email address copied!", 3000, "success");
+          this.notificationSystem.show(
+            "Email address copied!",
+            3000,
+            "success"
+          );
         } catch (err) {
           this.notificationSystem.show("Failed to copy email.", 3000, "error");
         }
       });
-      
-      form.addEventListener('submit', (e) => {
+
+      form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        
-        // Basic form validation
-        const name = form.querySelector('[name="name"]').value;
-        const email = form.querySelector('[name="email"]').value;
-        const subject = form.querySelector('[name="subject"]').value;
-        const message = form.querySelector('[name="message"]').value;
-        
-        if (!name || !email || !subject || !message) {
-            this.notificationSystem.show("Please fill out all fields.", 3000, "error");
-            return;
-        }
 
-        if (!UTILS.validateEmail(email)) {
-            this.notificationSystem.show("Please enter a valid email address.", 3000, "error");
-            return;
-        }
+        const formData = new FormData(form);
+        const object = {};
+        formData.forEach((value, key) => {
+          object[key] = value;
+        });
+        const json = JSON.stringify(object);
 
-        // Simulate form submission
-        setTimeout(() => {
-            this.notificationSystem.show("Message sent successfully!", 3000, "success");
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            headers: {
+              "Content-Type": "application/json",
+              Accept: "application/json",
+            },
+            body: json,
+          });
+
+          if (response.ok) {
+            this.notificationSystem.show(
+              "Message sent successfully , we will contact back you soon",
+              3000,
+              "success"
+            );
             form.reset();
-        }, 1000);
+          } else {
+            this.notificationSystem.show(
+              "Failed to send message. Please try again later.",
+              3000,
+              "error"
+            );
+          }
+        } catch (error) {
+          this.notificationSystem.show(
+            "Failed to send message. Please check your internet connection.",
+            3000,
+            "error"
+          );
+        }
       });
     }
 
     initBackToTop() {
-      const backToTopBtn = document.getElementById('back-to-top');
+      const backToTopBtn = document.getElementById("back-to-top");
       if (!backToTopBtn) return;
-      
+
       const showButton = () => {
-        const scrolled = document.documentElement.scrollTop || document.body.scrollTop;
+        const scrolled =
+          document.documentElement.scrollTop || document.body.scrollTop;
         if (scrolled > 300) {
-          backToTopBtn.classList.add('active');
+          backToTopBtn.classList.add("active");
         } else {
-          backToTopBtn.classList.remove('active');
+          backToTopBtn.classList.remove("active");
         }
       };
 
       const scrollToTop = () => {
         window.scrollTo({
           top: 0,
-          behavior: 'smooth'
+          behavior: "smooth",
         });
       };
-      
-      window.addEventListener('scroll', UTILS.throttle(showButton, CONFIG.throttleDelay));
-      backToTopBtn.addEventListener('click', scrollToTop);
+
+      window.addEventListener(
+        "scroll",
+        UTILS.throttle(showButton, CONFIG.throttleDelay)
+      );
+      backToTopBtn.addEventListener("click", scrollToTop);
     }
 
     initProjectModals() {

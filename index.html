@@ -201,20 +201,44 @@
           />
           <div class="hero-glow"></div>
           <div class="hero-popup top-left" data-target="projects">
-            <span class="popup-text">Projects</span>
-            <div class="popup-arrow"></div>
+            <div class="thinking-bubbles">
+              <div class="bubble bubble-1"></div>
+              <div class="bubble bubble-2"></div>
+              <div class="bubble bubble-3"></div>
+            </div>
+            <div class="main-bubble">
+              <span class="popup-text">Projects</span>
+            </div>
           </div>
           <div class="hero-popup top-right" data-target="skills">
-            <span class="popup-text">Skills</span>
-            <div class="popup-arrow"></div>
+            <div class="thinking-bubbles">
+              <div class="bubble bubble-1"></div>
+              <div class="bubble bubble-2"></div>
+              <div class="bubble bubble-3"></div>
+            </div>
+            <div class="main-bubble">
+              <span class="popup-text">Skills</span>
+            </div>
           </div>
           <div class="hero-popup bottom-left" data-target="about">
-            <span class="popup-text">About</span>
-            <div class="popup-arrow"></div>
+            <div class="thinking-bubbles">
+              <div class="bubble bubble-1"></div>
+              <div class="bubble bubble-2"></div>
+              <div class="bubble bubble-3"></div>
+            </div>
+            <div class="main-bubble">
+              <span class="popup-text">About</span>
+            </div>
           </div>
           <div class="hero-popup bottom-right" data-target="contact">
-            <span class="popup-text">Contact</span>
-            <div class="popup-arrow"></div>
+            <div class="thinking-bubbles">
+              <div class="bubble bubble-1"></div>
+              <div class="bubble bubble-2"></div>
+              <div class="bubble bubble-3"></div>
+            </div>
+            <div class="main-bubble">
+              <span class="popup-text">Contact</span>
+            </div>
           </div>
         </div>
         <div class="hero-left">
@@ -261,6 +285,22 @@
               cohesive results.
             </div>
           </article>
+        </div>
+      </section>
+      <section id="skills" aria-labelledby="skills-title">
+        <h2 class="section-title" id="skills-title">My Skills</h2>
+        <div class="skills-grid">
+          <div class="skill">HTML5</div>
+          <div class="skill">CSS3</div>
+          <div class="skill">JavaScript (ES6+)</div>
+          <div class="skill">React</div>
+          <div class="skill">Node.js</div>
+          <div class="skill">Express.js</div>
+          <div class="skill">MongoDB</div>
+          <div class="skill">SQL</div>
+          <div class="skill">Git</div>
+          <div class="skill">Figma</div>
+          <div class="skill">UI/UX Design</div>
         </div>
       </section>
       <section id="projects" aria-labelledby="projects-title">
@@ -323,11 +363,17 @@
             <div class="card-content">
               <div class="title">Spotify Clone (Home Page)</div>
               <div class="desc">
-                Pixel-perfect clone of the Spotify homepage built with HTML and
-                CSS. Faithfully replicates the original layout, colors,
-                typography, and responsive design. Demonstrates clean,
-                maintainable front-end code and attention to UI details. Ideal
-                for showcasing web design and development skills.
+                Pixel-perfect clone of the Spotify homepage, meticulously
+                crafted using pure HTML and CSS to replicate the original design
+                with high fidelity. Every element, from typography and color
+                schemes to layout and spacing, has been carefully recreated to
+                match Spotify’s sleek, modern aesthetic. The project showcases
+                attention to detail, responsive design practices, and the
+                ability to translate complex UIs into clean, maintainable code.
+                Ideal for demonstrating front-end skills, this clone highlights
+                proficiency in layout structuring, styling, and creating
+                visually appealing interfaces without relying on JavaScript or
+                external frameworks.
               </div>
               <button class="cta view-details-btn plain">View Details</button>
             </div>
@@ -355,6 +401,8 @@
             <div class="title">Send a Message</div>
             <form
               id="contactForm"
+              action="https://formspree.io/f/xvgbjbjq"
+              method="POST"
               style="
                 display: flex;
                 flex-direction: column;
