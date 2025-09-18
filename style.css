@@ -100,6 +100,16 @@ body {
   transition: background var(--timing-medium), color var(--timing-medium);
   font-size: 17px;
   line-height: 1.6;
+  cursor: url("images/cursor.png"), auto;
+}
+
+a,
+button,
+.cta,
+.project-card,
+.card,
+.hero-popup {
+  cursor: url("images/cursor.png"), pointer;
 }
 
 a {
@@ -1210,7 +1220,6 @@ footer::before {
   transform: translateY(-2px);
 }
 
-
 .hero-popup.active {
   opacity: 1;
   visibility: visible;
@@ -1231,7 +1240,7 @@ footer::before {
 }
 
 .hero-popup.active .bubble-4 {
-    animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+  animation: pop-in 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
 }
 
 .hero-popup.active .main-bubble {
