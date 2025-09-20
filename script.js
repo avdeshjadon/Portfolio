@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           await navigator.clipboard.writeText(CONFIG.email);
           this.notificationSystem.show(
-            "Email address copied!",
+            "Email address copied! Successfully",
             3000,
             "success"
           );
