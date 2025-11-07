@@ -1270,157 +1270,149 @@ footer::before {
   }
 }
 
+/* Responsive adjustments -------------------------------------------------- */
+@media (max-width: 1024px) {
+  .hero-image-wrapper {
+    height: 360px;
+  }
+
+  header {
+    padding: 10px 14px;
+  }
+
+  nav a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  .project-card .title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 820px) {
+  /* stack header elements for small screens */
+  header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    padding: 10px;
+    width: calc(100% - 20px);
+  }
+  header .logo {
+    justify-content: flex-start;
+  }
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .hero-image-wrapper {
+    height: 320px;
+    max-width: 680px;
+  }
+
+  .hero-left {
+    padding: 0 10px;
+  }
+
+  .hero-popup .main-bubble {
+    padding: 14px 18px;
+    font-size: 15px;
+  }
+
+  .thinking-bubbles { display: none; }
+}
+
+/* Small mobile: tighten layout, icon-only resume */
+@media (max-width: 420px) {
+  body { font-size: 15px; }
+  .hero-image-wrapper { height: 260px; }
+
+  h1 {
+    font-size: clamp(1.6rem, 10vw, 2.8rem);
+  }
+
+  .cta { padding: 10px 18px; font-size: 14px; }
+
+  header .download-resume span { display: none; }
+  header .download-resume { padding: 8px; border-radius: 10px; }
+
+  .hero-popup .main-bubble { padding: 10px 12px; font-size: 13px; }
+}
+
+/* Replace fixed popup offsets with responsive clamps --------------------- */
 .hero-popup.top-left {
-  top: 12%;
-  left: 250px;
+  top: 10%;
+  left: clamp(20px, 12%, 260px);
   flex-direction: row-reverse;
 }
 
 .hero-popup.top-right {
-  top: 12%;
-  right: 250px;
+  top: 10%;
+  right: clamp(20px, 12%, 260px);
   flex-direction: row;
 }
 
 .hero-popup.bottom-left {
-  bottom: 12%;
-  left: 250px;
+  bottom: 10%;
+  left: clamp(20px, 12%, 260px);
   flex-direction: row-reverse;
   align-items: flex-start;
 }
 
 .hero-popup.bottom-right {
-  bottom: 12%;
-  right: 250px;
+  bottom: 10%;
+  right: clamp(20px, 12%, 260px);
   align-items: flex-start;
 }
 
-/* Floating résumé download button */
-.download-resume {
-  position: fixed;
-  top: 88px;
-  right: 20px;
-  z-index: 11000;
-  display: inline-flex;
+/* Footer socials --------------------------------------------------------- */
+.footer-socials {
+  display: flex;
+  gap: 12px;
   align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.18);
-  border: none;
-  text-decoration: none;
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease, opacity 200ms ease;
-  pointer-events: auto;
-}
-.download-resume svg {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-}
-.download-resume:hover,
-.download-resume:focus {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 50px rgba(79, 70, 229, 0.24);
-  outline: none;
+  justify-content: center;
+  margin-left: 10px;
 }
 
-/* Keep floating variant but scope to .fixed (fallback) */
-.download-resume.fixed {
-  position: fixed;
-  top: 88px;
-  right: 20px;
-  z-index: 11000;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.18);
-  border: none;
-  text-decoration: none;
-  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease, opacity 200ms ease;
-  pointer-events: auto;
-}
-.download-resume.fixed svg {
-  width: 18px;
-  height: 18px;
-  flex: 0 0 18px;
-}
-.download-resume.fixed:hover,
-.download-resume.fixed:focus {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 18px 50px rgba(79, 70, 229, 0.24);
-  outline: none;
-}
-
-/* Header variant: inline, sits inside .header-actions before theme toggle */
-header .download-resume {
-  position: relative;
-  top: 0;
-  right: 0;
-  margin: 0;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 12px;
-  background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(236, 72, 153, 0.06));
-  color: var(--text-primary);
-  font-weight: 700;
-  font-size: 13px;
-  box-shadow: none;
+.footer-socials a {
+  display: inline-grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--glass-subtle);
   border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+  transition: transform 180ms var(--easing), background 180ms var(--easing);
   text-decoration: none;
-  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
-header .download-resume svg {
-  width: 14px;
-  height: 14px;
-  color: var(--accent-primary);
+
+.footer-socials a svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  fill: currentColor;
 }
-header .download-resume:hover,
-header .download-resume:focus {
+
+.footer-socials a:hover,
+.footer-socials a:focus {
   transform: translateY(-4px);
   background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
-  color: white;
-  box-shadow: var(--shadow-subtle);
+  color: #fff;
 }
 
-/* ensure header-actions spacing handles the button */
-.header-actions {
-  display: flex;
-  align-items: center;
+/* Make footer layout responsive */
+.footer-bottom {
+  flex-direction: column;
   gap: 12px;
-}
-
-/* responsive: header inline button moves to icon-only on very small screens */
-@media (max-width: 420px) {
-  header .download-resume span {
-    display: none;
-  }
-  header .download-resume {
-    padding: 8px;
-    border-radius: 10px;
-  }
-  .download-resume.fixed {
-    right: 14px;
-    top: auto;
-    bottom: 88px;
-  }
-}
-
-/* Accessibility focus improvement for header button */
-header .download-resume:focus-visible {
-  outline: 3px solid rgba(99, 102, 241, 0.12);
-  outline-offset: 3px;
+  padding-top: 18px;
+  text-align: center;
 }
 
 /* ...existing code... */

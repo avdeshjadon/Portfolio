@@ -142,6 +142,17 @@ export default function App() {
       <footer>
         <div className="footer-bottom">
           <p>© <span id="copyright-year">2025</span> Avdesh Jadon. All Rights Reserved.</p>
+
+          {/* social icons in footer */}
+          <div className="footer-socials" aria-label="Social links">
+            {CONFIG.socials.map((s, i) => (
+              <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" aria-label={s.name}>
+                {/* svg stored as string in CONFIG; inject as HTML */
+                }
+                <span dangerouslySetInnerHTML={{ __html: s.icon }} />
+              </a>
+            ))}
+          </div>
         </div>
       </footer>
 
