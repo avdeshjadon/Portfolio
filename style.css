@@ -1295,487 +1295,132 @@ footer::before {
   align-items: flex-start;
 }
 
-@media (max-width: 1024px) and (min-width: 769px) {
-  :root {
-    --gap-sm: 14px;
-    --gap-md: 20px;
-    --gap-lg: 28px;
-  }
-
-  body {
-    font-size: 16px;
-  }
-
-  header {
-    width: calc(100% - 30px);
-    padding: 10px 18px;
-    top: 15px;
-  }
-
-  .logo .mark {
-    width: 36px;
-    height: 36px;
-  }
-
-  .logo .name {
-    font-size: 15px;
-  }
-
-  nav a {
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-
-  #theme-toggle {
-    width: 40px;
-    height: 40px;
-  }
-
-  main {
-    padding: 0 15px;
-  }
-
-  .hero {
-    min-height: 80vh;
-    padding: 35px 0 15px 0;
-    gap: 14px;
-  }
-
-  .hero-image-wrapper {
-    height: 350px;
-  }
-
-  .eyebrow {
-    font-size: 13px;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 5vw, 3.5rem);
-  }
-
-  .sub {
-    font-size: 17px;
-  }
-
-  .cta {
-    padding: 14px 24px;
-    font-size: 15px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: var(--gap-md);
-  }
-
-  .card {
-    padding: var(--gap-md);
-  }
-
-  .skills-grid {
-    gap: 10px;
-  }
-
-  .skill {
-    padding: 10px 14px;
-    font-size: 13px;
-  }
-
-  .section-title {
-    font-size: 20px;
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap-lg);
-  }
-
-  .hero-popup {
-    font-size: 16px;
-    gap: 6px;
-  }
-  .hero-popup .main-bubble {
-    padding: 20px 28px;
-  }
-
-  .bubble-1 {
-    width: 10px;
-    height: 10px;
-  }
-  .bubble-3 {
-    width: 18px;
-    height: 18px;
-  }
-  .bubble-4 {
-    width: 14px;
-    height: 14px;
-  }
-
-  .hero-popup.top-left,
-  .hero-popup.bottom-left {
-    left: 150px;
-  }
-
-  .hero-popup.top-right,
-  .hero-popup.bottom-right {
-    right: 150px;
-  }
-
-  #back-to-top {
-    width: 44px;
-    height: 44px;
-    bottom: 25px;
-    right: 25px;
-  }
+/* Floating résumé download button */
+.download-resume {
+  position: fixed;
+  top: 88px;
+  right: 20px;
+  z-index: 11000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.18);
+  border: none;
+  text-decoration: none;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease, opacity 200ms ease;
+  pointer-events: auto;
+}
+.download-resume svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+.download-resume:hover,
+.download-resume:focus {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(79, 70, 229, 0.24);
+  outline: none;
 }
 
-@media (max-width: 768px) {
-  :root {
-    --gap-sm: 12px;
-    --gap-md: 16px;
-    --gap-lg: 24px;
-    --radius-sm: 10px;
-    --radius-md: 14px;
-    --radius-lg: 20px;
-  }
+/* Keep floating variant but scope to .fixed (fallback) */
+.download-resume.fixed {
+  position: fixed;
+  top: 88px;
+  right: 20px;
+  z-index: 11000;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: 0 10px 30px rgba(79, 70, 229, 0.18);
+  border: none;
+  text-decoration: none;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 280ms ease, opacity 200ms ease;
+  pointer-events: auto;
+}
+.download-resume.fixed svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+}
+.download-resume.fixed:hover,
+.download-resume.fixed:focus {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 18px 50px rgba(79, 70, 229, 0.24);
+  outline: none;
+}
 
-  body {
-    font-size: 15px;
-    line-height: 1.5;
-  }
+/* Header variant: inline, sits inside .header-actions before theme toggle */
+header .download-resume {
+  position: relative;
+  top: 0;
+  right: 0;
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, rgba(79, 70, 229, 0.08), rgba(236, 72, 153, 0.06));
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 13px;
+  box-shadow: none;
+  border: 1px solid var(--glass-border);
+  text-decoration: none;
+  transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+header .download-resume svg {
+  width: 14px;
+  height: 14px;
+  color: var(--accent-primary);
+}
+header .download-resume:hover,
+header .download-resume:focus {
+  transform: translateY(-4px);
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  box-shadow: var(--shadow-subtle);
+}
 
-  header {
-    left: 15px;
-    right: 15px;
-    width: auto;
-    transform: none;
-    padding: 8px 16px;
-    top: 10px;
-    flex-wrap: nowrap;
-  }
+/* ensure header-actions spacing handles the button */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  header.hidden {
-    transform: translateY(-120%);
-  }
-
-  .logo .mark {
-    width: 32px;
-    height: 32px;
-    padding: 6px;
-  }
-
-  .logo .name {
-    font-size: 14px;
-  }
-
-  nav ul {
+/* responsive: header inline button moves to icon-only on very small screens */
+@media (max-width: 420px) {
+  header .download-resume span {
     display: none;
   }
-
-  #mobile-menu-btn {
-    display: block;
-    z-index: var(--z-index-header) + 1;
+  header .download-resume {
+    padding: 8px;
+    border-radius: 10px;
   }
-
-  #mobile-menu-btn .icon-open {
-    display: block;
-  }
-
-  #mobile-menu-btn.open .icon-open {
-    display: none;
-  }
-
-  #mobile-menu-btn.open .icon-close {
-    display: block;
-  }
-
-  #theme-toggle {
-    width: 36px;
-    height: 36px;
-  }
-
-  #theme-toggle svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  main {
-    padding: 0 15px;
-  }
-
-  section {
-    margin-top: 40px;
-    padding: var(--gap-md) 0;
-  }
-
-  .hero {
-    min-height: 75vh;
-    padding: 30px 0 15px 0;
-    gap: 12px;
-  }
-
-  .hero-left {
-    max-width: 100%;
-    gap: 12px;
-  }
-
-  .hero-image-wrapper {
-    height: 280px;
-    margin-bottom: 6px;
-  }
-
-  .eyebrow {
-    font-size: 12px;
-    letter-spacing: 1.5px;
-  }
-
-  h1 {
-    font-size: clamp(1.8rem, 8vw, 2.8rem);
-    line-height: 1.1;
-  }
-
-  .sub {
-    font-size: 16px;
-    line-height: 1.4;
-    padding: 0 10px;
-  }
-
-  .cta {
-    padding: 12px 20px;
-    font-size: 14px;
-    margin-top: 8px;
-  }
-
-  .section-title {
-    font-size: 18px;
-    margin-bottom: var(--gap-md);
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-    gap: var(--gap-sm);
-  }
-
-  .card {
-    padding: var(--gap-sm);
-  }
-
-  .card .title {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-
-  .card .desc {
-    font-size: 14px;
-  }
-
-  .skills-grid {
-    gap: 8px;
-  }
-
-  .skill {
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-
-  .project-card {
-    padding: var(--gap-md);
-  }
-
-  .project-card .title {
-    font-size: clamp(1.2rem, 6vw, 1.6rem);
-    margin-bottom: 12px;
-  }
-
-  .project-card .desc {
-    max-width: 95%;
-    font-size: 14px;
-  }
-
-  .project-links {
-    flex-direction: column;
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial {
-    padding: var(--gap-sm);
-  }
-
-  .testimonial-author {
-    font-size: 14px;
-  }
-
-  .testimonial-text {
-    font-size: 14px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: var(--gap-sm);
-  }
-
-  .modal-content {
-    max-width: 95vw;
-    padding: var(--gap-md);
-    border-radius: var(--radius-md);
-  }
-
-  .modal-title {
-    font-size: 20px;
-    margin-bottom: var(--gap-sm);
-  }
-
-  .modal-desc {
-    font-size: 14px;
-    margin-bottom: var(--gap-md);
-  }
-
-  .modal-links {
-    flex-direction: column;
-    align-items: stretch;
-    gap: var(--gap-sm);
-  }
-
-  .footer-container {
-    grid-template-columns: 1fr;
-    gap: var(--gap-md);
-    padding: var(--gap-sm) 0;
-  }
-
-  .footer-column .footer-title {
-    font-size: 16px;
-    margin-bottom: var(--gap-sm);
-  }
-
-  .footer-tagline {
-    font-size: 13px;
-  }
-
-  .footer-motto {
-    font-size: 14px;
-  }
-
-  .footer-links a {
-    font-size: 14px;
-  }
-
-  .footer-services span {
-    font-size: 14px;
-  }
-
-  .socials {
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .social {
-    width: 40px;
-    height: 40px;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    gap: var(--gap-xs, 8px);
-    font-size: 12px;
-    padding-top: var(--gap-md);
-  }
-
-  #notification-container {
-    bottom: 15px;
-    max-width: 95vw;
-  }
-
-  .toast {
-    padding: 10px 20px;
-    font-size: 13px;
-    min-width: 150px;
-    border-radius: 30px;
-  }
-
-  #back-to-top {
-    width: 40px;
-    height: 40px;
-    bottom: 20px;
-    right: 20px;
-    font-size: 18px;
-  }
-
-  .hero-popup {
-    display: none;
-  }
-
-  .pre {
-    font-size: 16px;
-    letter-spacing: 4px;
+  .download-resume.fixed {
+    right: 14px;
+    top: auto;
+    bottom: 88px;
   }
 }
 
-@media (max-height: 500px) and (orientation: landscape) {
-  .hero {
-    min-height: 90vh;
-    padding: 20px 0 10px 0;
-  }
-
-  .hero-image-wrapper {
-    height: 200px;
-  }
+/* Accessibility focus improvement for header button */
+header .download-resume:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.12);
+  outline-offset: 3px;
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .hero-image {
-    image-rendering: -webkit-optimize-contrast;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-
-  .hero-popup {
-    animation: none !important;
-  }
-
-  .hero-popup::before,
-  .hero-popup::after {
-    animation: none !important;
-  }
-}
-
-:focus-visible {
-  outline: 2px solid var(--accent-primary);
-  outline-offset: 4px;
-  border-radius: 4px;
-}
-
-[role="img"] {
-  border: 0;
-}
-
-@media print {
-  * {
-    background: white !important;
-    color: black !important;
-    box-shadow: none !important;
-  }
-
-  header,
-  #mobile-nav,
-  #back-to-top,
-  .hero-popup {
-    display: none !important;
-  }
-
-  main {
-    padding: 0 !important;
-  }
-}
+/* ...existing code... */

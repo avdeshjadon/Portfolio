@@ -1,45 +1,73 @@
-# 🚀 Avdesh Jadon | Software Developer & AI Enthusiast
+# 🚀 Avdesh Jadon — Portfolio (React / Vite)
 
-<div align="center">
+This repository now runs as a React application bootstrapped with Vite. The original static site has been ported into a modern, component-driven structure while keeping the original visual identity and animations (hero crossfade, popups, cards reveal).  
 
-[![Portfolio](https://img.shields.io/badge/🌐_Portfolio-avdeshjadon.com-4A90E2?style=for-the-badge&logo=safari&logoColor=white)](https://avdeshjadon.github.io/Portfolio/)
-[![GitHub](https://img.shields.io/badge/GitHub-avdeshjadon-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/avdeshjadon)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-avdeshjadon-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/avdesh-jadon-8a2968291/)
-[![X](https://img.shields.io/badge/X-avdeshjadon-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/AvdeshJado26477)
+Quick summary
+- Tech: React 18, Vite
+- UI: CSS in `style.css` (kept from original)
+- Animations: smooth crossfade hero images, popup bubbles, intersection reveal, optional WaterFlow canvas effect (React component)
+- Legacy: `script.js` and `particles.js` are kept as small deprecation stubs (logic moved to `/src`)
 
-![Profile Views](https://komarev.com/ghpvc/?username=avdeshjadon&style=for-the-badge&color=4A90E2)
-[![Stars](https://img.shields.io/github/stars/avdeshjadon?style=for-the-badge&color=gold)](https://github.com/avdeshjadon)
+Getting started
 
-</div>
+1. Install
+   - Node 16+ recommended
+   - Run:
+     npm install
 
----
+2. Dev server
+   npm run dev
+   - Open http://localhost:5173 (or the port shown by Vite)
 
-## 🎯 **Vision Statement**
-> *"Transforming ideas into intelligent digital solutions that shape the future"*
+3. Build / Preview
+   npm run build
+   npm run preview
 
-**Welcome to my digital playground!** I'm a passionate **Software Developer** and **AI Enthusiast** from India, currently in my 3rd year pursuing Computer Science. I specialize in crafting innovative AI-powered applications, building scalable automation systems, and creating immersive full-stack experiences that solve real-world challenges.
+Environment
+- Example env file: `.env.example`
+- Copy and edit:
+  cp .env.example .env.local
+- Public env variables must be prefixed with `VITE_` to be available in the client.
+- Useful variables (from `.env.example`):
+  - VITE_SITE_TITLE
+  - VITE_APP_EMAIL
+  - VITE_FORM_ENDPOINT
+  - VITE_RESUME_PATH
+  - VITE_PORT
 
----
+Assets (place these in the repository root `public/` or project root served by Vite)
+- /resume.pdf — résumé file used by the floating download button (or update VITE_RESUME_PATH)
+- /images/avdesh.png
+- /images/avdesh-up-left.png
+- /images/avdesh-up-right.png
+- /images/avdesh-down-left.png
+- /images/avdesh-down-right.png
+- /images/cursor.png (optional custom cursor used by CSS)
 
-## 🎨 **Portfolio Highlights**
+Notes about behavior
+- Hero image crossfade: implemented with two stacked <img> layers to ensure smooth transitions. Ensure directional images exist to avoid flicker.
+- Popups: show based on cursor quadrant relative to the hero image; popups stay visible while hovered.
+- Cards / projects / testimonials: now reveal using an IntersectionObserver (class `.inview`).
+- WaterFlow/particles: ported to React component (`src/components/WaterFlow.jsx`). Legacy `particles.js` is a stub.
+- Legacy scripts: `script.js` retained as a short stub for compatibility but main logic is in `/src`.
 
-### 📐 **Design Philosophy**
-- **🎨 Aesthetic Excellence**: Clean, modern, and visually captivating interface
-- **🔄 Seamless Interactions**: Smooth animations and intuitive navigation
-- **📊 Data-Driven**: Analytics integration for continuous improvement
-- **♿ Accessibility First**: WCAG compliant for inclusive user experience
+Git
+- .gitignore added to ignore node_modules, dist, and .env files. Do not commit sensitive env files.
 
-### 🖥️ **Live View**
-You can view a live version of this project here:
-[🔗 Live View](https://avdeshjadon.github.io/Portfolio/)
+Deployment
+- Static build produced in `dist/` by `npm run build`. Deploy `dist/` to any static host (Netlify, Vercel, GitHub Pages). If using GitHub Pages, configure the build/deploy pipeline to build then publish `dist/`.
 
----
+Troubleshooting
+- If Vite complains about missing plugin, run:
+  npm install
+  npm ls @vitejs/plugin-react
+- If directional images flash on first hover, ensure images are present and the server serves them; you can pre-warm by visiting the pages or preloading images in App.
 
-## 📈 **GitHub Analytics**
+Contributing / Notes
+- The project intentionally uses client-safe env variables (VITE_ prefix). Do not store secrets in client env files.
+- If you want the resume button moved into the React header or to add an animated SVG icon for the download button, open an issue or send instructions; it's a small change.
 
-<div align="center">
+Contact
+- Email: hello@avdeshjadon.com (also available via contact form configured with VITE_FORM_ENDPOINT)
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=avdeshjadon&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=avdeshjadon&layout=compact&langs_count=7&theme=tokyonight"/>
-
-</div>
+Enjoy — GitHub Copilot helped port this repo to React & Vite for smoother development and better UX.

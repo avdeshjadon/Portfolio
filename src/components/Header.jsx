@@ -26,6 +26,21 @@ export default function Header({ socials = [], theme, setTheme }) {
       </nav>
 
       <div className="header-actions">
+        <a
+          className="download-resume"
+          href={import.meta.env.VITE_RESUME_PATH || "/resume.pdf"}
+          download
+          aria-label="Download résumé (PDF)"
+          title="Download résumé"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+            <polyline points="7 10 12 15 17 10"/>
+            <line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          <span>Résumé</span>
+        </a>
+
         <ThemeToggle theme={theme} setTheme={setTheme} />
       </div>
     </header>
