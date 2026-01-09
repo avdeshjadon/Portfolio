@@ -1,58 +1,120 @@
-# Portfolio Website
+# Avdesh Jadon - Portfolio Website
 
-This is a personal portfolio website built using Vite+React, Tailwind CSS, and Framer Motion to showcase my skills, projects, and experience.
+A modern, animated portfolio website built with React, Vite, and Tailwind CSS.
 
-## Features
-- **Responsive Design** – Works on all screen sizes.
-- **Smooth Animations** – Powered by Framer Motion for interactive user experience.
-- **Dark Mode Support** – Stylish UI with light and dark theme toggling.
-- **Optimized Performance** – Efficient rendering and smooth navigation.
-- **SEO Friendly** – Optimized for better search engine visibility.
+![Portfolio Preview](public/assets/hero-vector.svg)
 
-## Tech Stack
-- **Frontend:** React.js
-- **Styling:** Tailwind CSS
-- **Animations:** Framer Motion
+## ✨ Features
 
-## Installation & Setup
+- **Smooth Animations** - Powered by Framer Motion for fluid transitions
+- **Responsive Design** - Mobile-first approach with Tailwind CSS
+- **Interactive Projects Section** - Bento grid layout with modal previews
+- **Custom Cursor** - Unique cursor animation for desktop
+- **Type Animation** - Dynamic text typing effect on hero section
+- **Dark Theme Projects** - Modern glassmorphism design
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/sathishk-dev/illustration-portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```sh
-   cd illustration-portfolio
-   ```
-3. Install dependencies:
-   ```sh
-   npm install
-   ```
-4. Start the development server:
-   ```sh
-   npm run dev
-   ```
-   The app will be available at `http://localhost:3000/`.
+## 🛠️ Tech Stack
 
-## Demo
-Check out the live demo of the portfolio website: [Live Demo](https://sk-illustration-portfolio.netlify.app/)
+- **React 19** - UI Library
+- **Vite** - Build Tool
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
+- **React Icons** - Icon Library
+- **React Type Animation** - Typing Effect
 
-## Deployment
-To deploy the portfolio website, you can use platforms like:
-- **Vercel**
-- **Netlify**
-- **GitHub Pages** (with additional configurations)
+## 🚀 Getting Started
 
-## How to Contribute
-If you’d like to contribute or improve this project, feel free to fork the repository and submit a pull request.
+### Prerequisites
 
-## 🙌 Show Your Support
-If you like this project, please star it and share it with your friends!
+- Node.js 18+ 
+- npm or yarn
 
-## Contact
-If you have any questions or suggestions, feel free to reach out via:
-- **Email:** sathish31102004@gmail.com
-- **LinkedIn:** [@sathishk-dev](https://linkedin.com/in/sathishk-dev)
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/avdeshjadon/portfolio.git
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+### Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## 📁 Project Structure
+
+```
+├── public/
+│   ├── assets/          # Static assets (SVGs, images)
+│   └── resume/          # Resume PDF
+├── src/
+│   ├── components/      # React components
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Footer.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Projects.jsx
+│   │   └── Skills.jsx
+│   ├── pages/
+│   │   └── Home.jsx
+│   ├── utils/
+│   │   └── CursorAnimation.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+├── index.html
+├── tailwind.config.js
+├── vite.config.js
+└── package.json
+```
+
+## 📝 Sections
+
+1. **Home** - Hero section with introduction and social links
+2. **Skills** - Technical skills showcase
+3. **About** - Personal information and background
+4. **Projects** - Interactive bento grid with project cards
+5. **Contact** - Contact form and information
+6. **Footer** - Quick links and copyright
+
+## 🎨 Customization
+
+### Update Personal Info
+Edit the following files to customize:
+- `src/pages/Home.jsx` - Name, title, description
+- `src/components/About.jsx` - About content
+- `src/components/Projects.jsx` - Project details
+- `src/components/Contact.jsx` - Contact information
+
+### Update Resume
+Replace `resume/resume.pdf` with your resume file.
+
+### Update Colors
+Modify `tailwind.config.js` for custom color schemes.
+
+## 📄 License
+
+MIT License - feel free to use this template for your own portfolio!
+
+## 👤 Author
+
+**Avdesh Jadon**
+- GitHub: [@avdeshjadon](https://github.com/avdeshjadon)
+- LinkedIn: [avdeshjadon](https://linkedin.com/in/avdeshjadon)
+- Twitter: [@AvdeshJado26477](https://x.com/AvdeshJado26477)
 
 ---
-Made with ❤️ by Sathish Kumar.
+
+⭐ Star this repo if you found it helpful!

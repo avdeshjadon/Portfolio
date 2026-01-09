@@ -33,12 +33,10 @@ export default function Home() {
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
               Hello, <TypeAnimation
                 sequence={[
-                  'I am Sathish Kumar',
+                  'I am Avdesh Jadon',
                   1000,
-                  // 'I am a Web Developer',
-                  // 1000,
-                  // 'I am a UI/UX Designer',
-                  // 1000,
+                  'Software Tester And Developer',
+                  1000,
                 ]}
                 speed={10}
                 style={{ fontWeight:600 }}
@@ -46,7 +44,7 @@ export default function Home() {
               />
             </motion.h2>
             <motion.h2 variants={{ hidden: { opacity: 0, y: 10 }, visible: { opacity: 1, y: 0 } }}>
-              <span className="font-extrabold">Fullstack</span>{" "}
+              <span className="font-extrabold">Software</span>{" "}
               <span
                 className="text-white font-extrabold"
                 style={{ WebkitTextStroke: "1px black" }}
@@ -74,10 +72,17 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 1 }}
           >
-            {[BiLogoGmail, IoLogoLinkedin, IoLogoTwitter, BsGithub].map((Icon, index) => (
+            {[
+              { Icon: BiLogoGmail, link: "mailto:theavdeshjadon@gmail.com" },
+              { Icon: IoLogoLinkedin, link: "https://linkedin.com/in/avdeshjadon" },
+              { Icon: IoLogoTwitter, link: "https://x.com/AvdeshJado26477" },
+              { Icon: BsGithub, link: "https://github.com/avdeshjadon" }
+            ].map(({ Icon, link }, index) => (
               <motion.a
                 key={index}
-                href="#"
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-white p-2 lg:p-3 rounded border-2 border-black"
                 whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}
                 whileTap={{ scale: 0.9 }}
