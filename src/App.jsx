@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Home from './pages/Home'
 import Skills from './components/Skills'
 import Navbar from './components/Navbar'
@@ -8,20 +8,26 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import CustomCursor from './utils/CursorAnimation'
 import ThreeBackground from './components/ThreeBackground'
+import Loader from './components/Loader'
 
 export default function App() {
-  return (
-    <div className='font-sora scroll-smooth overflow-x-hidden'>
-      <ThreeBackground />
-      <CustomCursor/>
-      <Navbar />
-      <Home />
-      <Skills />
-      <About />
-      <Projects />
-      <Contact />
+  const [isLoading, setIsLoading] = useState(true)
 
-      <Footer />
-    </div>
+  return (
+    <>
+      <Loader onLoadComplete={() => setIsLoading(false)} />
+      
+      <div className={`font-sora scroll-smooth overflow-x-hidden transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+        <ThreeBackground />
+        <CustomCursor/>
+        <Navbar />
+        <Home />
+        <Skills />
+        <About />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </>
   )
 }
