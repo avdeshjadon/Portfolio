@@ -17,7 +17,7 @@ function GridPlane({ scrollY }) {
   return (
     <mesh ref={meshRef} position={[0, -3, -8]} rotation={[-Math.PI / 2.2, 0, 0]}>
       <planeGeometry args={[80, 80, 50, 50]} />
-      <meshBasicMaterial color="#000" wireframe transparent opacity={0.15} />
+      <meshBasicMaterial color="#000" wireframe transparent opacity={0.08} />
     </mesh>
   )
 }
@@ -429,7 +429,7 @@ function FloatingParticles({ scrollY }) {
       <bufferGeometry>
         <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
       </bufferGeometry>
-      <pointsMaterial size={0.025} color="#aaa" transparent opacity={0.35} />
+      <pointsMaterial size={0.025} color="#aaa" transparent opacity={0.2} />
     </points>
   )
 }
