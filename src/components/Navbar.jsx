@@ -29,12 +29,12 @@ export default function Navbar() {
   )
 
   return (
-    <motion.nav initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5 }} className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 bg-white p-5 transition-shadow ${hasShadow ? "shadow-md" : ""}`}>
+    <motion.nav initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }} className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 bg-white p-5 transition-shadow duration-300 ${hasShadow ? "shadow-md" : ""}`}>
       <div className="container mx-auto flex justify-between items-center">
         <motion.h1 whileHover={{ scale: 1.1 }} onClick={() => scrollTo("home")} className="text-2xl font-bold cursor-pointer tracking-wider" style={{ fontFamily: "'Orbitron', sans-serif" }}>
           Avdesh<span className="text-[#71717A]">Jadon</span>
         </motion.h1>
-        <ul className="hidden lg:flex items-center gap-x-7 font-semibold">
+        <ul className="hidden lg:flex items-center gap-x-7 font-normal">
           {sections.map((s) => (
             <motion.li key={s} className="group" whileHover={{ scale: 1.1 }}>
               <button onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
@@ -47,9 +47,9 @@ export default function Navbar() {
       </div>
       <AnimatePresence>
         {isOpen && (
-          <motion.div initial={{ y: "-100%" }} animate={{ y: 0 }} exit={{ y: "-100%" }} transition={{ duration: 0.3 }} className="lg:hidden fixed top-0 right-0 h-full w-full bg-white shadow">
+          <motion.div initial={{ y: "-100%" }} animate={{ y: 0 }} exit={{ y: "-100%" }} transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }} className="lg:hidden fixed top-0 right-0 h-full w-full bg-white shadow">
             <button className="absolute top-5 right-5 text-2xl" onClick={() => setIsOpen(false)}><HiX /></button>
-            <ul className="flex flex-col items-start ml-16 mt-28 gap-y-6 font-semibold">
+            <ul className="flex flex-col items-start ml-16 mt-28 gap-y-6 font-normal">
               {sections.map((s) => (
                 <motion.li key={s} className="border-b" whileHover={{ scale: 1.1 }}>
                   <button onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>

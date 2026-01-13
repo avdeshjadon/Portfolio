@@ -1,18 +1,18 @@
 import { motion } from 'framer-motion'
 
-const anim = { initial: { opacity: 0 }, whileInView: { opacity: 1 }, transition: { type: "spring", stiffness: 80, damping: 10 }, viewport: { once: true } }
+const anim = { initial: { opacity: 0 }, whileInView: { opacity: 1 }, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }, viewport: { once: true, margin: "-50px" } }
 
 export default function About() {
   return (
     <div className="px-5 lg:px-28 py-10 lg:py-16 flex justify-between gap-8 flex-col lg:flex-row" id="about">
-      <motion.div className="lg:w-1/2" {...anim} initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}>
+      <motion.div className="lg:w-1/2" {...anim} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}>
         <img src="/assets/about-me.svg" alt="About Me" />
       </motion.div>
-      <motion.div className="lg:w-1/2" {...anim} initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }}>
-        <h2 className="lg:text-4xl text-2xl mt-4 lg:mt-0">About <span className="font-extrabold">Me</span></h2>
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-5 lg:mt-10">I'm a passionate Software Tester and Developer specializing in Quality Assurance & Full-Stack Development. I thrive on ensuring software reliability while building high-performing, user-friendly applications.</p>
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">My journey in tech started in 2015, and since then, I've continuously evolved, taking on new challenges in both development and testing. Today, I build and test cutting-edge web applications using Next.js, TypeScript, and modern testing frameworks.</p>
-        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5">Beyond coding and testing, I enjoy sharing insights on Twitter, engaging with the tech community, and following industry trends.</p>
+      <motion.div className="lg:w-1/2" {...anim} initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }}>
+        <h2 className="lg:text-3xl text-2xl mt-4 lg:mt-0 font-light">About <span className="font-medium">Me</span></h2>
+        <p className="text-[#71717A] text-sm/6 lg:text-base mt-5 lg:mt-10 font-light">I'm a passionate Software Tester and Developer specializing in Quality Assurance & Full-Stack Development. I thrive on ensuring software reliability while building high-performing, user-friendly applications.</p>
+        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5 font-light">My journey in tech started in 2015, and since then, I've continuously evolved, taking on new challenges in both development and testing. Today, I build and test cutting-edge web applications using Next.js, TypeScript, and modern testing frameworks.</p>
+        <p className="text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-5 font-light">Beyond coding and testing, I enjoy sharing insights on Twitter, engaging with the tech community, and following industry trends.</p>
       </motion.div>
     </div>
   )

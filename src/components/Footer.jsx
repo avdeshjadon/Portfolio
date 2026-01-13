@@ -11,21 +11,21 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-white mt-16 border-t-2 border-black px-5 lg:px-28">
+    <footer className="bg-white mt-16 border-t border-black px-5 lg:px-28">
       <div className="py-10 lg:py-12 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
         <div>
-          <h3 className="text-2xl font-extrabold text-black">Avdesh <span className="text-[#71717A]">Jadon</span></h3>
-          <p className="mt-2 text-[#71717A] text-sm">Software Tester And Developer</p>
+          <h3 className="text-2xl font-medium text-black">Avdesh <span className="text-[#71717A]">Jadon</span></h3>
+          <p className="mt-2 text-[#71717A] text-sm font-light">Software Developer</p>
         </div>
         <div className="flex flex-col gap-3">
           <div className="flex items-center gap-3">
             {socials.map(({ Icon, href, label }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="bg-white p-2 rounded border-2 border-black hover:bg-black hover:text-white transition-all">
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="bg-white p-2 rounded border border-black hover:bg-black hover:text-white transition-all">
                 <Icon className="w-4 h-4" />
               </a>
             ))}
           </div>
-          <p className="text-xs font-semibold text-[#71717A]">© {new Date().getFullYear()} Avdesh Jadon</p>
+          <p className="text-xs font-light text-[#71717A]">© {new Date().getFullYear()} Avdesh Jadon</p>
         </div>
       </div>
     </footer>

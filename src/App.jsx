@@ -7,7 +7,6 @@ import Footer from './components/Footer'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
 import CustomCursor from './utils/CursorAnimation'
-import ThreeBackground from './components/ThreeBackground'
 import Loader from './components/Loader'
 
 export default function App() {
@@ -16,7 +15,6 @@ export default function App() {
     <>
       <Loader onLoadComplete={() => setIsLoading(false)} />
       <div className={`font-sora scroll-smooth overflow-x-hidden transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-        <ThreeBackground />
         <CustomCursor />
         <Navbar />
         <Home />

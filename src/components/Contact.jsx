@@ -16,23 +16,23 @@ const socials = [
 export default function Contact() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
-  const anim = (props) => ({ initial: { opacity: 0, ...props }, animate: isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }, transition: { duration: 0.8 } })
+  const anim = (props) => ({ initial: { opacity: 0, ...props }, animate: isInView ? { opacity: 1, x: 0, y: 0 } : { opacity: 0 }, transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] } })
 
   return (
     <motion.div ref={ref} {...anim({})} className='lg:my-16 lg:px-28 my-8 px-5' id='contact'>
-      <motion.h2 {...anim({ y: -50 })} className='text-2xl lg:text-4xl text-center'>Contact <span className='font-extrabold'>Me</span></motion.h2>
+      <motion.h2 {...anim({ y: -50 })} className='text-2xl lg:text-3xl text-center font-light'>Contact <span className='font-medium'>Me</span></motion.h2>
       <div className='flex justify-between items-center mt-8 lg:mt-16 flex-col lg:flex-row'>
         <motion.div {...anim({ x: -50 })} className='lg:w-[40%]'>
           <form className='w-full space-y-3 lg:space-y-5'>
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="text" placeholder='Your name' required />
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="email" placeholder='Email' required />
-            <input className='border-2 px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full' type="text" placeholder='Your website (If exists)' />
-            <textarea className='resize-none border-2 px-5 py-3 h-32 border-black placeholder:text-[#71717A] rounded text-sm w-full' placeholder='How can I help?*' />
+            <input className='border px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full font-light' type="text" placeholder='Your name' required />
+            <input className='border px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full font-light' type="email" placeholder='Email' required />
+            <input className='border px-5 py-3 border-black rounded placeholder:text-[#71717A] text-sm w-full font-light' type="text" placeholder='Your website (If exists)' />
+            <textarea className='resize-none border px-5 py-3 h-32 border-black placeholder:text-[#71717A] rounded text-sm w-full font-light' placeholder='How can I help?*' />
             <div className='flex justify-between gap-3 lg:gap-5 flex-col lg:flex-row'>
-              <motion.button whileHover={{ scale: 1.05 }} type='submit' className='bg-black justify-center w-fit lg:w-auto lg:flex-1 hover:shadow-lg text-white px-3 py-2 rounded flex items-center gap-x-3 font-medium'>Get In Touch</motion.button>
+              <motion.button whileHover={{ scale: 1.05 }} type='submit' className='bg-black justify-center w-fit lg:w-auto lg:flex-1 hover:shadow-lg text-white px-3 py-2 rounded flex items-center gap-x-3 font-normal'>Get In Touch</motion.button>
               <div className='flex items-center gap-x-2 lg:gap-x-5'>
                 {socials.map(({ Icon, link }, i) => (
-                  <motion.a key={i} href={link} target="_blank" rel="noopener noreferrer" className="bg-white p-2 lg:p-3 rounded border-2 border-black" whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }} whileTap={{ scale: 0.9 }}>
+                  <motion.a key={i} href={link} target="_blank" rel="noopener noreferrer" className="bg-white p-2 lg:p-3 rounded border border-black" whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }} whileTap={{ scale: 0.9 }}>
                     <Icon className="w-4 h-4 lg:w-5 lg:h-5" />
                   </motion.a>
                 ))}
@@ -41,17 +41,17 @@ export default function Contact() {
           </form>
         </motion.div>
         <motion.div {...anim({ x: 50 })} className='lg:w-1/2'>
-          <div className='font-extrabold text-2xl lg:text-5xl mt-5 lg:mt-0 space-y-1 lg:space-y-3'>
+          <div className='font-medium text-2xl lg:text-4xl mt-5 lg:mt-0 space-y-1 lg:space-y-3'>
             <h2>Let's <span className='text-white' style={{ WebkitTextStroke: '1px black' }}>talk</span> for</h2>
             <h2>Something special</h2>
           </div>
-          <p className='text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-6'>I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
-          <div className='font-semibold text-sm lg:text-xl flex flex-col mt-6 gap-2 lg:gap-4'>
+          <p className='text-[#71717A] text-sm/6 lg:text-base mt-3 lg:mt-6 font-light'>I seek to push the limits of creativity to create high-engaging, user-friendly, and memorable interactive experiences.</p>
+          <div className='font-normal text-sm lg:text-lg flex flex-col mt-6 gap-2 lg:gap-4'>
             <motion.a whileHover={{ x: 5 }} className='flex items-center gap-2 group' href="mailto:theavdeshjadon@gmail.com">
-              <span className='border-2 transition-all border-transparent group-hover:border-black rounded-full p-1'><IoMdMail className="w-4 h-4 lg:w-5 lg:h-5" /></span>theavdeshjadon@gmail.com
+              <span className='border transition-all border-transparent group-hover:border-black rounded-full p-1'><IoMdMail className="w-4 h-4 lg:w-5 lg:h-5" /></span>theavdeshjadon@gmail.com
             </motion.a>
             <motion.a whileHover={{ x: 5 }} className='flex items-center gap-2 group' href="tel:6201979695">
-              <span className='border-2 transition-all border-transparent group-hover:border-black rounded-full p-[5px]'><FaPhone className="w-3 h-3 lg:w-4 lg:h-4" /></span>+91 6201979695
+              <span className='border transition-all border-transparent group-hover:border-black rounded-full p-[5px]'><FaPhone className="w-3 h-3 lg:w-4 lg:h-4" /></span>+91 6201979695
             </motion.a>
           </div>
         </motion.div>

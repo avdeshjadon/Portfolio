@@ -1,13 +1,12 @@
-import { useRef, useEffect, useState, useMemo } from 'react'
+import { useRef, useEffect, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 
 const carPositions = new Map()
 
-function GridPlane({ scrollY }) {
+function GridPlane() {
   const ref = useRef()
   useFrame((state) => {
     if (ref.current) {
-      ref.current.position.z = -8 + scrollY * 0.002
       ref.current.rotation.x = -Math.PI / 2.2 + Math.sin(state.clock.elapsedTime * 0.1) * 0.02
     }
   })
@@ -65,7 +64,7 @@ const CarBody = ({ color, type }) => {
   )
 }
 
-function Car({ scrollY, carId, startX, startY, startDir, color, type }) {
+function Car({ carId, startX, startY, startDir, color, type }) {
   const groupRef = useRef(), carRef = useRef()
   const cellSize = 80 / 50, maxCell = 25
   const getRotation = (d) => [0, Math.PI, Math.PI / 2, -Math.PI / 2][d] || 0
@@ -101,7 +100,7 @@ function Car({ scrollY, carId, startX, startY, startDir, color, type }) {
 
     groupRef.current.position.x += (posX - groupRef.current.position.x) * 0.1
     groupRef.current.position.y += (-3 + posY * Math.cos(rot) - groupRef.current.position.y) * 0.1
-    groupRef.current.position.z += (-8 + scrollY * 0.002 + posY * Math.sin(rot) - groupRef.current.position.z) * 0.1
+    groupRef.current.position.z += (-8 + posY * Math.sin(rot) - groupRef.current.position.z) * 0.1
 
     const target = getRotation(s.dir)
     let diff = target - s.rot
@@ -123,7 +122,7 @@ function Car({ scrollY, carId, startX, startY, startDir, color, type }) {
   )
 }
 
-function Particles({ scrollY }) {
+function Particles() {
   const ref = useRef()
   const positions = useMemo(() => {
     const pos = new Float32Array(40 * 3)
@@ -138,7 +137,6 @@ function Particles({ scrollY }) {
   useFrame((state) => {
     if (ref.current) {
       ref.current.rotation.y = state.clock.elapsedTime * 0.015
-      ref.current.position.y = -scrollY * 0.001
     }
   })
 
@@ -154,23 +152,18 @@ const colors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#AA96DA', '#FF9F43', '#74B9FF'
 const starts = colors.map((_, i) => ({ x: ((i % 4) - 2) * 5, y: (Math.floor(i / 4) - 1) * 5, dir: i % 4 }))
 
 export default function ThreeBackground() {
-  const [scrollY, setScrollY] = useState(0)
-
   useEffect(() => {
     carPositions.clear()
-    const handle = () => setScrollY(window.scrollY)
-    window.addEventListener('scroll', handle, { passive: true })
-    return () => window.removeEventListener('scroll', handle)
   }, [])
 
   return (
-    <div className="fixed inset-0 -z-10">
+    <div className="absolute inset-0 -z-10">
       <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
         <ambientLight intensity={0.6} />
         <directionalLight position={[10, 10, 5]} intensity={0.8} />
-        <GridPlane scrollY={scrollY} />
-        <Particles scrollY={scrollY} />
-        {colors.map((c, i) => <Car key={i} carId={i} scrollY={scrollY} startX={starts[i].x} startY={starts[i].y} startDir={starts[i].dir} color={c} type={i % 5} />)}
+        <GridPlane />
+        <Particles />
+        {colors.map((c, i) => <Car key={i} carId={i} startX={starts[i].x} startY={starts[i].y} startDir={starts[i].dir} color={c} type={i % 5} />)}
       </Canvas>
     </div>
   )
