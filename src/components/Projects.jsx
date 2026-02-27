@@ -45,7 +45,7 @@ const projects = [
 
 const Card = ({ project, onSelect }) => (
   <motion.div className="flex-shrink-0 w-[300px] sm:w-[350px] lg:w-[380px] cursor-pointer group" onClick={() => onSelect(project)} whileHover={{ y: -3 }} transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}>
-    <div className="h-full bg-white rounded-2xl border border-black/10 p-5 sm:p-6 relative transition-shadow duration-300 hover:shadow-lg">
+    <div className="h-full rounded-2xl border border-black/10 p-5 sm:p-6 relative transition-shadow duration-300 hover:shadow-lg">
       <div className="absolute -right-2 top-1/2 -translate-y-1/2 text-[100px] font-light text-black/[0.03] select-none">{String(project.id).padStart(2, "0")}</div>
       <div className="relative">
         <div className="flex justify-between"><span className="text-[10px] font-normal tracking-widest uppercase text-black/40">{project.category}</span><span className="text-xs font-mono text-black/20">{String(project.id).padStart(2, "0")}</span></div>
@@ -90,7 +90,7 @@ export default function Projects() {
 
   return (
     <>
-      <section className="bg-[#FAFAFA] py-16 lg:py-24" id="projects">
+      <section className="py-16 lg:py-24" id="projects">
         <div className="px-5 lg:px-28 mb-8">
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
             <div>

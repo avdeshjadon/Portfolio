@@ -72,7 +72,7 @@ export default function Contact() {
               </motion.button>
               <div className='flex items-center gap-x-2 lg:gap-x-5'>
                 {socials.map(({ Icon, link }, i) => (
-                  <motion.a key={i} href={link} target="_blank" rel="noopener noreferrer" className="bg-white p-2 lg:p-3 rounded border border-black" whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }} whileTap={{ scale: 0.9 }}>
+                  <motion.a key={i} href={link} target="_blank" rel="noopener noreferrer" className="p-2 lg:p-3 rounded border border-black" whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }} whileTap={{ scale: 0.9 }}>
                     <Icon className="w-4 h-4 lg:w-5 lg:h-5" />
                   </motion.a>
                 ))}

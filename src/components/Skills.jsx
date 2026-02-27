@@ -25,7 +25,7 @@ export default function Skills() {
       </motion.h2>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 text-base font-normal mt-7 lg:mt-16 place-items-center gap-y-6 lg:gap-y-12">
         {skills.map((skill, i) => (
-          <motion.div key={skill.name} className="bg-white border hover:bg-black hover:text-white transition-all duration-300 cursor-pointer border-black rounded p-3 h-36 w-36 lg:h-44 lg:w-44 flex flex-col items-center justify-center gap-5" initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.05 }} viewport={{ once: true, margin: "-30px" }}>
+          <motion.div key={skill.name} className="border hover:bg-black hover:text-white transition-all duration-300 cursor-pointer border-black rounded p-3 h-36 w-36 lg:h-44 lg:w-44 flex flex-col items-center justify-center gap-5" initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.05 }} viewport={{ once: true, margin: "-30px" }}>
             {skill.icon}
             <p>{skill.name}</p>
           </motion.div>
