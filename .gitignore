@@ -30,3 +30,5 @@ coverage/
 coverage.*.json
 # Misc
 *.log
+# Qoder
+*.qoder 

@@ -17,9 +17,9 @@ export default function Home() {
     <div className="mt-20 relative" id="home">
       <div className="hidden lg:block"><ThreeBackground /></div>
       <div className="flex justify-between py-10 items-center px-5 lg:px-28 lg:flex-row flex-col-reverse relative z-10">
-        <motion.div className="lg:w-[45%]" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}>
+        <motion.div className="lg:w-[45%]" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}>
           <div className="text-2xl lg:text-4xl flex flex-col mt-8 lg:mt-0 gap-2 lg:gap-5 text-nowrap font-light">
-            <h2>Hello, <TypeAnimation sequence={['I am Avdesh Jadon', 1000, 'Software Developer', 1000]} speed={10} style={{ fontWeight: 400 }} repeat={Infinity} /></h2>
+            <h2>Hello, <TypeAnimation sequence={['', 500, 'I am Avdesh Jadon', 2000]} speed={10} deletionSpeed={50} style={{ fontWeight: 400 }} repeat={Infinity} /></h2>
             <h2><span className="font-medium">Software</span> <span className="text-white font-medium" style={{ WebkitTextStroke: "1px black" }}>Developer</span></h2>
             <h2>Based In <span className="font-medium">India.</span></h2>
           </div>
@@ -32,7 +32,7 @@ export default function Home() {
             ))}
           </div>
         </motion.div>
-        <motion.div className="lg:w-[55%] w-full" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.1 }}>
+        <motion.div className="lg:w-[55%] w-full" initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}>
           <img className="h-full w-full" src="/assets/hero-vector.svg" alt="Hero" />
         </motion.div>
       </div>

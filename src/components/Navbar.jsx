@@ -29,16 +29,15 @@ export default function Navbar() {
   )
 
   return (
-    <motion.nav initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }} className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 bg-white p-5 transition-shadow duration-300 ${hasShadow ? "shadow-md" : ""}`}>
+    <motion.nav initial={{ y: -100, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className={`fixed lg:px-28 px-5 top-0 left-0 w-full z-50 transition-all duration-500 ${hasShadow ? "glassmorphism shadow-sm border-b border-black/5 py-4" : "bg-transparent py-6"}`}>
       <div className="container mx-auto flex justify-between items-center">
-        <motion.h1 whileHover={{ scale: 1.1 }} onClick={() => scrollTo("home")} className="text-2xl font-bold cursor-pointer tracking-wider" style={{ fontFamily: "'Orbitron', sans-serif" }}>
+        <motion.h1 whileHover={{ scale: 1.05 }} onClick={() => scrollTo("home")} className="text-2xl font-bold cursor-pointer tracking-wider" style={{ fontFamily: "'Orbitron', sans-serif" }}>
           Avdesh<span className="text-[#71717A]">Jadon</span>
         </motion.h1>
         <ul className="hidden lg:flex items-center gap-x-7 font-normal">
           {sections.map((s) => (
-            <motion.li key={s} className="group" whileHover={{ scale: 1.1 }}>
-              <button onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
-              <span className="w-0 transition-all duration-300 group-hover:w-full h-[2px] bg-black flex" />
+            <motion.li key={s} className="group" whileHover={{ y: -2 }} transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}>
+              <button className="text-black/70 transition-colors" onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
             </motion.li>
           ))}
         </ul>
@@ -47,15 +46,14 @@ export default function Navbar() {
       </div>
       <AnimatePresence>
         {isOpen && (
-          <motion.div initial={{ y: "-100%" }} animate={{ y: 0 }} exit={{ y: "-100%" }} transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }} className="lg:hidden fixed top-0 right-0 h-full w-full bg-white shadow">
-            <button className="absolute top-5 right-5 text-2xl" onClick={() => setIsOpen(false)}><HiX /></button>
-            <ul className="flex flex-col items-start ml-16 mt-28 gap-y-6 font-normal">
+          <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }} className="lg:hidden absolute top-full left-0 w-full glassmorphism shadow-md border-b border-black/5 p-5">
+            <ul className="flex flex-col items-center gap-y-6 font-normal">
               {sections.map((s) => (
-                <motion.li key={s} className="border-b" whileHover={{ scale: 1.1 }}>
-                  <button onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
+                <motion.li key={s} className="w-full text-center" whileHover={{ scale: 1.05 }}>
+                  <button className="text-lg text-black/80 transition-colors" onClick={() => scrollTo(s)}>{s.charAt(0).toUpperCase() + s.slice(1)}</button>
                 </motion.li>
               ))}
-              <ResumeBtn />
+              <li className="mt-2"><ResumeBtn /></li>
             </ul>
           </motion.div>
         )}
