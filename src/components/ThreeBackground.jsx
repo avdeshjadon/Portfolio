@@ -1,6 +1,17 @@
 import { useRef, useEffect, useMemo } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 
+// Helper component for car body material with proper color updates
+function CarBodyMaterial({ color }) {
+  return (
+    <meshStandardMaterial 
+      color={color} 
+      metalness={0.6} 
+      roughness={0.3}
+    />
+  )
+}
+
 const carPositions = new Map()
 
 function GridPlane() {
@@ -20,7 +31,6 @@ function GridPlane() {
 
 const CarBody = ({ color, type }) => {
   const glass = <meshStandardMaterial color="#0d1b2a" metalness={0.98} roughness={0.02} envMapIntensity={1.5} />
-  const bodyMat = <meshStandardMaterial color={color} metalness={0.9} roughness={0.1} envMapIntensity={1.2} />
   const carbonMat = <meshStandardMaterial color="#141414" metalness={0.4} roughness={0.6} />
   const lightGlow = (c) => <meshStandardMaterial color={c} emissive={c} emissiveIntensity={1.2} toneMapped={false} />
   const chrome = <meshStandardMaterial color="#f0f0f0" metalness={1} roughness={0.05} envMapIntensity={2} />
@@ -33,26 +43,26 @@ const CarBody = ({ color, type }) => {
       {/* Main low body - aggressive wedge */}
       <mesh position={[0, 0, 0.055]}>
         <boxGeometry args={[0.58, 0.24, 0.075]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Tapered pointed nose */}
       <mesh position={[0.26, 0, 0.055]}>
         <boxGeometry args={[0.12, 0.16, 0.065]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Extreme rear haunches - muscular */}
       <mesh position={[-0.22, 0.07, 0.065]}>
         <boxGeometry args={[0.14, 0.09, 0.095]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.22, -0.07, 0.065]}>
         <boxGeometry args={[0.14, 0.09, 0.095]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Hexagonal cabin - fighter jet style */}
       <mesh position={[-0.1, 0, 0.125]}>
         <boxGeometry args={[0.22, 0.17, 0.065]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Roof scoop */}
       <mesh position={[-0.08, 0, 0.16]}>
@@ -76,11 +86,11 @@ const CarBody = ({ color, type }) => {
       {/* B-pillar */}
       <mesh position={[-0.06, 0.088, 0.135]}>
         <boxGeometry args={[0.015, 0.008, 0.04]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.06, -0.088, 0.135]}>
         <boxGeometry args={[0.015, 0.008, 0.04]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Y-shaped LED headlights - sharp */}
       <mesh position={[0.3, 0.075, 0.06]}>
@@ -166,11 +176,11 @@ const CarBody = ({ color, type }) => {
       {/* Mirror caps */}
       <mesh position={[0.02, 0.095, 0.125]}>
         <boxGeometry args={[0.025, 0.015, 0.015]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[0.02, -0.095, 0.125]}>
         <boxGeometry args={[0.025, 0.015, 0.015]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
     </group>
   )
@@ -181,27 +191,27 @@ const CarBody = ({ color, type }) => {
       {/* Extremely long low nose - iconic */}
       <mesh position={[0.18, 0, 0.05]}>
         <boxGeometry args={[0.38, 0.19, 0.055]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Pointed front tip */}
       <mesh position={[0.35, 0, 0.05]}>
         <boxGeometry args={[0.08, 0.14, 0.045]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Wide cabin base */}
       <mesh position={[-0.1, 0, 0.07]}>
         <boxGeometry args={[0.32, 0.26, 0.095]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Tapered rear deck */}
       <mesh position={[-0.28, 0, 0.09]}>
         <boxGeometry args={[0.12, 0.22, 0.075]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Flat roof - classic */}
       <mesh position={[-0.08, 0, 0.145]}>
         <boxGeometry args={[0.2, 0.2, 0.035]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Near-vertical windshield */}
       <mesh position={[0.02, 0, 0.155]}>
@@ -220,11 +230,11 @@ const CarBody = ({ color, type }) => {
       {/* Pop-up headlight covers - closed */}
       <mesh position={[0.32, 0.065, 0.06]}>
         <boxGeometry args={[0.025, 0.045, 0.018]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[0.32, -0.065, 0.06]}>
         <boxGeometry args={[0.025, 0.045, 0.018]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Hidden lights glow */}
       <mesh position={[0.31, 0.065, 0.06]}>
@@ -318,11 +328,11 @@ const CarBody = ({ color, type }) => {
       {/* Side mirrors - small */}
       <mesh position={[0.05, 0.105, 0.135]}>
         <boxGeometry args={[0.02, 0.012, 0.012]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[0.05, -0.105, 0.135]}>
         <boxGeometry args={[0.02, 0.012, 0.012]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Fuel filler cap */}
       <mesh position={[-0.05, 0.13, 0.11]}>
@@ -338,22 +348,22 @@ const CarBody = ({ color, type }) => {
       {/* Teardrop monocoque body */}
       <mesh position={[0, 0, 0.055]}>
         <boxGeometry args={[0.56, 0.22, 0.065]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Pointed curved nose */}
       <mesh position={[0.27, 0, 0.05]}>
         <boxGeometry args={[0.1, 0.14, 0.05]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Wide rear with integrated spoiler base */}
       <mesh position={[-0.24, 0, 0.07]}>
         <boxGeometry args={[0.14, 0.22, 0.085]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Extreme bubble canopy - fighter jet */}
       <mesh position={[-0.08, 0, 0.135]}>
         <boxGeometry args={[0.24, 0.16, 0.075]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Wraparound glass - extensive */}
       <mesh position={[0.03, 0, 0.165]}>
@@ -425,11 +435,11 @@ const CarBody = ({ color, type }) => {
       {/* Wing endplates with logos */}
       <mesh position={[-0.38, 0.13, 0.145]}>
         <boxGeometry args={[0.035, 0.008, 0.03]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.38, -0.13, 0.145]}>
         <boxGeometry args={[0.035, 0.008, 0.03]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Dihedral door blades - signature */}
       <mesh position={[0.04, 0.115, 0.075]}>
@@ -515,12 +525,12 @@ const CarBody = ({ color, type }) => {
       {/* Wide majestic body - sculpted */}
       <mesh position={[0, 0, 0.065]}>
         <boxGeometry args={[0.54, 0.28, 0.085]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Iconic horseshoe grille - pronounced */}
       <mesh position={[0.24, 0, 0.065]}>
         <boxGeometry args={[0.14, 0.2, 0.075]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Grille center bar */}
       <mesh position={[0.3, 0, 0.065]}>
@@ -539,11 +549,11 @@ const CarBody = ({ color, type }) => {
       {/* Wide rear quarters - C-shape foundation */}
       <mesh position={[-0.22, 0.09, 0.085]}>
         <boxGeometry args={[0.16, 0.1, 0.11]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.22, -0.09, 0.085]}>
         <boxGeometry args={[0.16, 0.1, 0.11]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* C-shaped side signature */}
       <mesh position={[-0.18, 0.14, 0.09]}>
@@ -565,7 +575,7 @@ const CarBody = ({ color, type }) => {
       {/* Elegant cabin */}
       <mesh position={[-0.06, 0, 0.155]}>
         <boxGeometry args={[0.22, 0.22, 0.065]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Glasshouse - extensive */}
       <mesh position={[0.04, 0, 0.18]}>
@@ -626,16 +636,16 @@ const CarBody = ({ color, type }) => {
       {/* Active rear wing - wide */}
       <mesh position={[-0.36, 0, 0.165]}>
         <boxGeometry args={[0.035, 0.28, 0.012]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Wing supports */}
       <mesh position={[-0.32, 0.12, 0.145]}>
         <boxGeometry args={[0.025, 0.008, 0.035]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.32, -0.12, 0.145]}>
         <boxGeometry args={[0.025, 0.008, 0.035]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Quad exhaust - signature */}
       <mesh position={[-0.3, 0.045, 0.075]}>
@@ -708,40 +718,40 @@ const CarBody = ({ color, type }) => {
       {/* Classic 911 flyline - timeless */}
       <mesh position={[0.06, 0, 0.055]}>
         <boxGeometry args={[0.46, 0.23, 0.065]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Long sloping hood - iconic */}
       <mesh position={[0.26, 0, 0.05]}>
         <boxGeometry args={[0.12, 0.17, 0.055]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Hood creases */}
       <mesh position={[0.18, 0.06, 0.07]}>
         <boxGeometry args={[0.15, 0.008, 0.005]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[0.18, -0.06, 0.07]}>
         <boxGeometry args={[0.15, 0.008, 0.005]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Rounded flowing rear - 911 signature */}
       <mesh position={[-0.2, 0, 0.08]}>
         <boxGeometry args={[0.12, 0.22, 0.085]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Wide rear fenders */}
       <mesh position={[-0.22, 0.08, 0.085]}>
         <boxGeometry args={[0.1, 0.06, 0.09]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[-0.22, -0.08, 0.085]}>
         <boxGeometry args={[0.1, 0.06, 0.09]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Curved roof with gentle slope */}
       <mesh position={[-0.1, 0, 0.14]}>
         <boxGeometry args={[0.2, 0.2, 0.045]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       {/* Gently sloping windshield */}
       <mesh position={[0.02, 0, 0.16]}>
@@ -911,11 +921,11 @@ const CarBody = ({ color, type }) => {
       {/* Mirror caps - sporty */}
       <mesh position={[0.04, 0.11, 0.145]}>
         <boxGeometry args={[0.025, 0.015, 0.018]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
       <mesh position={[0.04, -0.11, 0.145]}>
         <boxGeometry args={[0.025, 0.015, 0.018]} />
-        {bodyMat}
+        <CarBodyMaterial color={color} />
       </mesh>
     </group>
   )
@@ -1095,13 +1105,8 @@ export default function ThreeBackground() {
   return (
     <div className="absolute inset-0 -z-10">
       <Canvas camera={{ position: [0, 0, 10], fov: 60 }} dpr={[1, 2]} gl={{ antialias: true, alpha: true }}>
-        <ambientLight intensity={0.3} />
-        <directionalLight position={[15, 15, 8]} intensity={1.5} castShadow />
-        <directionalLight position={[-10, 10, 5]} intensity={0.8} color="#e8f4ff" />
-        <pointLight position={[-15, -10, 8]} intensity={0.6} color="#ffffff" />
-        <pointLight position={[10, -5, 5]} intensity={0.4} color="#fff8e7" />
-        <spotLight position={[0, 25, 12]} angle={0.4} penumbra={0.6} intensity={1} />
-        <spotLight position={[8, 0, 8]} angle={0.5} penumbra={0.4} intensity={0.5} color="#ccddff" />
+        <ambientLight intensity={0.8} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
         <GridPlane />
         <Particles />
         {colors.map((c, i) => <Car key={i} carId={i} startX={starts[i].x} startY={starts[i].y} startDir={starts[i].dir} color={c} type={i % 5} />)}
