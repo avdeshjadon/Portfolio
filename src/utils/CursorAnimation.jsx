@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function CustomCursor() {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [cursorPosition, setCursorPosition] = useState({ x: -100, y: -100 });
   const [cursorSize, setCursorSize] = useState(32); // Default size
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible((prev) => {
+        if (!prev) return true;
+        return prev;
+      });
     };
 
     const handleMouseOverText = () => {
@@ -40,7 +45,12 @@ export default function CustomCursor() {
   return (
     <motion.div
       className="fixed bg-white rounded-full pointer-events-none mix-blend-difference"
-      style={{ width: cursorSize, height: cursorSize, zIndex: 9999 }}
+      style={{ 
+        width: cursorSize, 
+        height: cursorSize, 
+        zIndex: 9999,
+        opacity: isVisible ? 1 : 0 
+      }}
       animate={{ x: cursorPosition.x - cursorSize / 2, y: cursorPosition.y - cursorSize / 2 }}
       transition={{ type: "spring", stiffness: 200, damping: 20 }}
     />
