@@ -1,0 +1,260 @@
+User-agent: *
+Disallow:
+Allow: /$
+Allow: /index.html$
+Allow: /about$
+Allow: /about-me$
+Allow: /resume$
+Allow: /cv$
+Allow: /experience$
+Allow: /skills$
+Allow: /projects$
+Allow: /project/
+Allow: /work$
+Allow: /portfolio$
+Allow: /my-work$
+Allow: /code$
+Allow: /coding$
+Allow: /development$
+Allow: /web-dev$
+Allow: /fullstack$
+Allow: /mern$
+Allow: /react$
+Allow: /node$
+Allow: /backend$
+Allow: /frontend$
+Allow: /testing$
+Allow: /test-automation$
+Allow: /qa$
+Allow: /quality-assurance$
+Allow: /manual-testing$
+Allow: /automation-testing$
+Allow: /selenium$
+Allow: /cypress$
+Allow: /jest$
+Allow: /junit$
+Allow: /test-cases$
+Allow: /bug-reports$
+Allow: /test-strategies$
+Allow: /open-source$
+Allow: /opensource$
+Allow: /contributions$
+Allow: /github$
+Allow: /git$
+Allow: /os-contributions$
+Allow: /pull-requests$
+Allow: /issues$
+Allow: /hacktoberfest$
+Allow: /education$
+Allow: /lpu$
+Allow: /lovely-professional-university$
+Allow: /btech$
+Allow: /computer-science$
+Allow: /cse$
+Allow: /learning$
+Allow: /courses$
+Allow: /certifications$
+Allow: /achievements$
+Allow: /academics$
+Allow: /blog$
+Allow: /blogs/
+Allow: /articles$
+Allow: /tech-blog$
+Allow: /testing-blog$
+Allow: /dev-blog$
+Allow: /tutorials$
+Allow: /guides$
+Allow: /how-to$
+Allow: /learning-resources$
+Allow: /contact$
+Allow: /hire-me$
+Allow: /work-together$
+Allow: /collaborate$
+Allow: /connect$
+Allow: /reach-me$
+Allow: /social$
+Allow: /links$
+Allow: /assets/
+Allow: /static/
+Allow: /images/
+Allow: /img/
+Allow: /screenshots/
+Allow: /demos/
+Allow: /showcase/
+Allow: /icons/
+Allow: /favicon.ico$
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Disallow: /node_modules/
+Disallow: /.git/config
+Disallow: /.git/objects
+Allow: /.git$
+Allow: /dist/
+Allow: /build/
+Disallow: /.tmp$
+Disallow: /.temp$
+Disallow: /.log$
+Disallow: /.bak$
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: magpie-crawler
+Allow: /
+
+User-agent: omgili
+Allow: /
+
+User-agent: omgilibot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Scrapy
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12Bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: *
+Crawl-delay: 2
+
+User-agent: Googlebot
+Crawl-delay: 1
+
+User-agent: Bingbot
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Crawl-delay: 0.5
+
+User-agent: GPTBot
+Crawl-delay: 3
+
+User-agent: PerplexityBot
+Crawl-delay: 2
+
+Sitemap: https://avdeshjadon.dpdns.org/sitemap.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-index.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-profile.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-about.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-projects.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-testing.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-development.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-open-source.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-blog.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-skills.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-education.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-achievements.xml
+Sitemap: https://avdeshjadon.dpdns.org/sitemap-images.xml
+
+Host: https://avdeshjadon.dpdns.org
+
+Allow: /?page=
+Allow: /?sort=
+Allow: /?filter=
+Allow: /?tag=
+Allow: /?category=
+Allow: /?q=
+Allow: /?search=
+
+Allow: /?utm_source=
+Allow: /?utm_medium=
+Allow: /?utm_campaign=
+Allow: /?utm_content=
+Allow: /?utm_term=
