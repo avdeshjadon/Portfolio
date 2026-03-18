@@ -6,6 +6,16 @@ import { BsGithub } from "react-icons/bs"
 const projects = [
   { 
     id: 1, 
+    title: "Practice Typing", 
+    category: "React Web App", 
+    description: "A sleek, MonkeyType-inspired typing practice app with progressive modes, real-time feedback, and a zen experience.", 
+    features: ["6 Typing Modes", "Live Stats (WPM)", "Smart Cursor", "Zen Mode"], 
+    tech: ["React 19", "Vite JS", "CSS-in-JS"], 
+    liveUrl: "https://practice-typing-seven.vercel.app/",
+    codeUrl: "https://github.com/avdeshjadon/practiceTyping" 
+  },
+  { 
+    id: 2, 
     title: "Jmac Visualizer", 
     category: "System Tool", 
     description: "Interactive sunburst chart to visualize and clean up your Mac's filesystem.", 
@@ -14,7 +24,7 @@ const projects = [
     codeUrl: "https://github.com/avdeshjadon/JmacVisualizer" 
   },
   { 
-    id: 2, 
+    id: 3, 
     title: "WebIn", 
     category: "Browser Extension", 
     description: "Retro-styled draggable floating overlay for quick access to your favorite web tools.", 
@@ -23,7 +33,7 @@ const projects = [
     codeUrl: "https://github.com/avdeshjadon/WebIn" 
   },
   { 
-    id: 3, 
+    id: 4, 
     title: "Cookies Extractor", 
     category: "Browser Extension", 
     description: "Extract, view, copy, and insert cookies from any website with a modern interface.", 
@@ -32,7 +42,7 @@ const projects = [
     codeUrl: "https://github.com/avdeshjadon/Cookies" 
   },
   { 
-    id: 4, 
+    id: 5, 
     title: "Panda Login", 
     category: "Web UI", 
     description: "Cute, responsive login & signup page with animated panda UI.", 
