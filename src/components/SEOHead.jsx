@@ -4,8 +4,8 @@ const BASE_URL = "https://avdeshjadon.dpdns.org"
 const PROFILE_IMAGE = "https://avdeshjadon.dpdns.org/assets/avdeshjadon.jpeg"
 
 export default function SEOHead({
-  title = "Avdesh Jadon | Software Tester & Full Stack Developer | B.Tech CSE LPU | Open Source Contributor",
-  description = "Avdesh - Software Tester and Full Stack Developer from Lovely Professional University (LPU), B.Tech CSE. Open Source Contributor specializing in test automation, manual testing, QA engineering, MERN stack development, React.js, Node.js, and JavaScript.",
+  title = "Avdesh Jadon | Software Tester & Full Stack Developer | B.Tech CSE NIT Jalandhar | Open Source Contributor",
+  description = "Avdesh - Software Tester and Full Stack Developer from Dr B R Ambedkar National Institute of Technology (NIT Jalandhar), B.Tech CSE. Open Source Contributor specializing in test automation, manual testing, QA engineering, MERN stack development, React.js, Node.js, and JavaScript.",
   keywords = "Avdesh Jadon, Software Tester, QA Engineer, SDET, Full Stack Developer, MERN Stack Developer, JavaScript Developer, React.js Developer, Node.js Developer, Test Automation Engineer",
   canonicalPath = "/",
   ogType = "website",
