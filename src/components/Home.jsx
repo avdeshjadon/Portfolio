@@ -3,7 +3,7 @@ import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5"
 import { BiLogoGmail } from "react-icons/bi"
 import { BsGithub } from "react-icons/bs"
 import { TypeAnimation } from "react-type-animation"
-import ThreeBackground from "../components/ThreeBackground"
+import ThreeBackground from "./ThreeBackground"
 
 const socials = [
   { Icon: BiLogoGmail, link: "mailto:theavdeshjadon@gmail.com" },
