@@ -8,6 +8,7 @@ const navLinks = [
   { label: "About", path: "/about" },
   { label: "Skills", path: "/skills" },
   { label: "Projects", path: "/projects" },
+  { label: "Blog", path: "/blog" },
   { label: "Contact", path: "/contact" },
 ]
 
@@ -43,7 +44,7 @@ export default function Navbar() {
             <motion.li key={path} className="group" whileHover={{ y: -2 }} transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}>
               <Link
                 to={path}
-                className={`transition-colors ${location.pathname === path ? "text-black font-medium" : "text-black/70 hover:text-black"}`}
+                className={`transition-colors ${location.pathname.startsWith(path) && path !== "/" && path !== "/contact" ? "text-black font-medium" : location.pathname === path ? "text-black font-medium" : "text-black/70 hover:text-black"}`}
               >
                 {label}
               </Link>
@@ -62,7 +63,7 @@ export default function Navbar() {
                   <Link
                     to={path}
                     onClick={() => setIsOpen(false)}
-                    className={`text-lg transition-colors ${location.pathname === path ? "text-black font-medium" : "text-black/80"}`}
+                    className={`text-lg transition-colors ${location.pathname.startsWith(path) && path !== "/" && path !== "/contact" ? "text-black font-medium" : location.pathname === path ? "text-black font-medium" : "text-black/80"}`}
                   >
                     {label}
                   </Link>

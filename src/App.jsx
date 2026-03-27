@@ -9,6 +9,8 @@ import AboutPage from './pages/AboutPage'
 import SkillsPage from './pages/SkillsPage'
 import ProjectsPage from './pages/ProjectsPage'
 import ContactPage from './pages/ContactPage'
+import BlogListPage from './pages/BlogListPage'
+import BlogPostPage from './pages/BlogPostPage'
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -30,6 +32,8 @@ export default function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/skills" element={<SkillsPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/blog" element={<BlogListPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
