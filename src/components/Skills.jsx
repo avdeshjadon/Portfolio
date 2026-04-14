@@ -26,18 +26,31 @@ const skills = [
 
 export default function Skills() {
   return (
-    <div className="mt-3 lg:mt-16 pb-10 lg:pb-16 px-5 lg:px-16 mx-auto max-w-[1400px]" id="skills">
-      <motion.h2 className="text-2xl lg:text-3xl text-center font-light" initial={{ opacity: 0, y: -15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }} viewport={{ once: true }}>
+    <section className="mt-3 lg:mt-16 pb-10 lg:pb-16 px-5 lg:px-16 mx-auto max-w-[1400px]" id="skills" aria-label="Technical skills">
+      <motion.h2
+        className="text-2xl lg:text-3xl text-center font-light"
+        initial={{ opacity: 0, y: -15 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+        viewport={{ once: true }}
+      >
         My <span className="font-medium">Skills</span>
       </motion.h2>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-6 text-sm lg:text-base font-normal mt-7 lg:mt-16 justify-center place-items-center">
         {skills.map((skill, i) => (
-          <motion.div key={skill.name} className="border hover:bg-black hover:text-white transition-all duration-300 cursor-pointer border-black rounded p-3 h-28 w-28 lg:h-36 lg:w-36 flex flex-col items-center justify-center gap-3 lg:gap-4" initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.05 }} viewport={{ once: true, margin: "-30px" }}>
+          <motion.div
+            key={skill.name}
+            className="border border-black rounded p-3 h-28 w-28 lg:h-36 lg:w-36 flex flex-col items-center justify-center gap-3 lg:gap-4 cursor-pointer transition-all duration-400 hover:bg-black hover:text-white hover:shadow-lg hover:-translate-y-1"
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: i * 0.04 }}
+            viewport={{ once: true, margin: "-30px" }}
+          >
             {skill.icon}
             <p>{skill.name}</p>
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   )
 }
