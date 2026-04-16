@@ -1,32 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://avdeshjadon.dpdns.org/</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/avdeshjadon.jpeg</image:loc>
+      <image:title>Avdesh Jadon - Software Tester and Full Stack Developer</image:title>
+      <image:caption>Avdesh Jadon Portfolio - B.Tech CSE NIT Jalandhar</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://avdeshjadon.dpdns.org/about</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://avdeshjadon.dpdns.org/skills</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://avdeshjadon.dpdns.org/projects</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://avdeshjadon.dpdns.org/blog</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://avdeshjadon.dpdns.org/contact</loc>
-    <lastmod>2026-03-25</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

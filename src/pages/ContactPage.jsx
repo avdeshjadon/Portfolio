@@ -6,8 +6,8 @@ export default function ContactPage() {
     <div className="mt-24">
       <SEOHead
         title="Contact Avdesh Jadon | Hire a Software Tester & Full Stack Developer"
-        description="Get in touch with Avdesh Jadon for software testing, full stack development, freelance projects, and open source collaboration. Available for full-time, internship, remote, and freelance opportunities."
-        keywords="Contact Avdesh Jadon, Hire Software Tester, Hire Full Stack Developer, Freelance Developer India, Software Testing Services, Web Development Services, QA Engineer Contact, React Developer Hire, Node.js Developer"
+        description="Get in touch with Avdesh Jadon for software testing, full stack development, freelance projects, and open source collaboration. Available for full-time, internship, remote, and freelance opportunities. Email: theavdeshjadon@gmail.com"
+        keywords="Contact Avdesh Jadon, Hire Avdesh Jadon, Avdesh Jadon email, Avdesh Jadon phone, Hire Software Tester, Hire Full Stack Developer, Freelance Developer India, avdeshjadon contact"
         canonicalPath="/contact"
       />
       <Contact />
