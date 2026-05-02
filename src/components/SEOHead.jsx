@@ -112,10 +112,15 @@ const buildImageObject = ({ url, name, caption, representativeOfPage = false }, 
   "name": name,
   "caption": caption,
   "description": caption,
-  "author": { "@id": PERSON_ID },
-  "creator": { "@id": PERSON_ID },
-  "copyrightHolder": { "@id": PERSON_ID },
+  "author": { "@id": PERSON_ID, "name": PERSON_NAME },
+  "creator": {
+    "@type": "Person",
+    "name": PERSON_NAME,
+    "url": BASE_URL
+  },
+  "copyrightHolder": { "@id": PERSON_ID, "name": PERSON_NAME },
   "copyrightYear": "2026",
+  "copyrightNotice": `© 2026 ${PERSON_NAME}. All rights reserved.`,
   "creditText": PERSON_NAME,
   "license": `${BASE_URL}/license`,
   "acquireLicensePage": `${BASE_URL}/contact`,
@@ -541,9 +546,7 @@ export default function SEOHead({
       <meta name="twitter:data2" content="NIT Jalandhar" />
 
       {/* ── PRELOAD CRITICAL IMAGES ─────────────────────────────────────────── */}
-
-      <link rel="preload" as="image" href={image} />
-      <link rel="preload" as="image" href={`${BASE_URL}/assets/profiles/avdesh-jadon-official-profile.jpg`} />
+      <link rel="preload" as="image" href={`${BASE_URL}/assets/hero-vector.svg`} />
 
       {/* ── JSON-LD: Person (Knowledge Panel anchor) ───────────────────────── */}
 
