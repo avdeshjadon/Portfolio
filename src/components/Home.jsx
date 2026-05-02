@@ -1,15 +1,19 @@
 import { motion } from "framer-motion"
-import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5"
+import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from "react-icons/io5"
 import { BiLogoGmail } from "react-icons/bi"
 import { BsGithub } from "react-icons/bs"
 import { TypeAnimation } from "react-type-animation"
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si"
 import ThreeBackground from "./ThreeBackground"
 
 const socials = [
   { Icon: BiLogoGmail, link: "mailto:theavdeshjadon@gmail.com", label: "Email" },
   { Icon: IoLogoLinkedin, link: "https://linkedin.com/in/avdeshjadon", label: "LinkedIn" },
   { Icon: IoLogoTwitter, link: "https://x.com/AvdeshJado26477", label: "Twitter" },
-  { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" }
+  { Icon: IoLogoInstagram, link: "https://instagram.com/__avdeshhere", label: "Instagram" },
+  { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" },
+  { Icon: SiLeetcode, link: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
+  { Icon: SiGeeksforgeeks, link: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" }
 ]
 
 const stagger = {
@@ -43,7 +47,7 @@ export default function Home() {
                 key={i}
                 href={link}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label={label}
                 className="p-2 lg:p-3 rounded border-2 border-black transition-colors duration-300"
                 whileHover={{ scale: 1.1, backgroundColor: "#000", color: "#fff" }}

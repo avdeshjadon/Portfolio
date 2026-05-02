@@ -1,14 +1,18 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
 import { BsGithub } from "react-icons/bs"
-import { IoLogoLinkedin, IoLogoTwitter } from "react-icons/io5"
+import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from "react-icons/io5"
 import { BiLogoGmail } from "react-icons/bi"
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si"
 
 const socials = [
   { Icon: BiLogoGmail, href: "mailto:theavdeshjadon@gmail.com", label: "Email" },
   { Icon: IoLogoLinkedin, href: "https://linkedin.com/in/avdeshjadon", label: "LinkedIn" },
   { Icon: IoLogoTwitter, href: "https://x.com/AvdeshJado26477", label: "Twitter" },
+  { Icon: IoLogoInstagram, href: "https://instagram.com/__avdeshhere", label: "Instagram" },
   { Icon: BsGithub, href: "https://github.com/avdeshjadon", label: "GitHub" },
+  { Icon: SiLeetcode, href: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
+  { Icon: SiGeeksforgeeks, href: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" },
 ]
 
 const navLinks = [
@@ -43,7 +47,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer me"
                 aria-label={label}
                 className="p-2 rounded border border-black/80 transition-all duration-300 hover:bg-black hover:text-white hover:border-black"
                 whileHover={{ scale: 1.08 }}

@@ -2,15 +2,19 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { BiLogoGmail } from 'react-icons/bi'
 import { BsGithub } from 'react-icons/bs'
-import { IoLogoLinkedin, IoLogoTwitter } from 'react-icons/io5'
+import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from 'react-icons/io5'
 import { IoMdMail } from "react-icons/io"
 import { FaPhone } from "react-icons/fa6"
+import { SiGeeksforgeeks, SiLeetcode } from 'react-icons/si'
 
 const socials = [
   { Icon: BiLogoGmail, link: "mailto:theavdeshjadon@gmail.com", label: "Email" },
   { Icon: IoLogoLinkedin, link: "https://linkedin.com/in/avdeshjadon", label: "LinkedIn" },
   { Icon: IoLogoTwitter, link: "https://x.com/AvdeshJado26477", label: "Twitter" },
-  { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" }
+  { Icon: IoLogoInstagram, link: "https://instagram.com/__avdeshhere", label: "Instagram" },
+  { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" },
+  { Icon: SiLeetcode, link: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
+  { Icon: SiGeeksforgeeks, link: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" }
 ]
 
 export default function Contact() {
@@ -86,7 +90,7 @@ export default function Contact() {
                     key={i}
                     href={link}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer me"
                     aria-label={label}
                     className="p-2 lg:p-3 rounded border border-black/80 transition-all duration-300"
                     whileHover={{ scale: 1.08, backgroundColor: "#000", color: "#fff" }}

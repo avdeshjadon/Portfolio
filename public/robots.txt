@@ -1,84 +1,63 @@
-# Primary crawl rules
+# robots.txt — avdeshjadon.dpdns.org
+# Avdesh Jadon — Software Tester & Full Stack Developer
+# https://avdeshjadon.dpdns.org
+
 User-agent: *
-Disallow:
 Allow: /
+
+# Explicit allow for all important pages
 Allow: /about
 Allow: /skills
 Allow: /projects
+Allow: /blog
 Allow: /contact
 Allow: /assets/
-Disallow: /node_modules/
-Disallow: /.git/
+Allow: /assets/avdeshjadon.jpeg
+Allow: /assets/profiles/
+Allow: /assets/favicon.svg
 
-# Search engine bots
+# Sitemap location
+Sitemap: https://avdeshjadon.dpdns.org/sitemap.xml
+
+# Crawl-delay (optional, remove if you want max speed)
+# Crawl-delay: 1
+
+# Googlebot — no restrictions
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 1
+Crawl-delay: 0
 
+# Googlebot Images — allow all profile images for Google Images ranking
+User-agent: Googlebot-Image
+Allow: /assets/avdeshjadon.jpeg
+Allow: /assets/profiles/avdesh-jadon-official-profile.jpg
+Allow: /assets/profiles/avdesh-jadon-developer-portfolio-main.jpg
+Allow: /assets/profiles/avdesh-jadon-nit-jalandhar-cse.jpg
+Allow: /assets/profiles/avdesh-jadon-software-developer-full-stack.jpg
+Allow: /assets/profiles/avdesh-jadon-qa-automation-engineer.jpg
+Allow: /assets/profiles/avdesh-jadon-professional-headshot.jpg
+Allow: /assets/profiles/avdesh-jadon-software-tester-nitj.jpg
+Allow: /assets/profiles/avdesh-jadon-mern-stack-developer.jpg
+Allow: /assets/profiles/avdesh-jadon-javascript-expert.jpg
+Allow: /assets/profiles/avdesh-jadon-coding-expert.jpg
+Allow: /assets/profiles/avdesh-jadon-web-designer-india.jpg
+
+# Bingbot
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 1
 
-User-agent: Googlebot-Image
-Allow: /
-Crawl-delay: 0.5
-
+# Yahoo Slurp
 User-agent: Slurp
 Allow: /
 
-User-agent: Baiduspider
-Allow: /
-
-User-agent: Yandex
-Allow: /
-
+# DuckDuckBot
 User-agent: DuckDuckBot
 Allow: /
 
-# Social media bots
-User-agent: Twitterbot
+# Baiduspider
+User-agent: Baiduspider
 Allow: /
 
-User-agent: LinkedInBot
+# Yandex
+User-agent: YandexBot
 Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: WhatsApp
-Allow: /
-
-# AI bots
-User-agent: GPTBot
-Allow: /
-Crawl-delay: 3
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: Google-Extended
-Allow: /
-
-# SEO tools
-User-agent: SemrushBot
-Allow: /
-
-User-agent: AhrefsBot
-Allow: /
-
-# Default crawl delay
-User-agent: *
-Crawl-delay: 2
-
-# Sitemap
-Sitemap: https://avdeshjadon.dpdns.org/sitemap.xml
-
-# Host
-Host: https://avdeshjadon.dpdns.org

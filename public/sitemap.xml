@@ -1,45 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME PAGE — Priority 1.0 with all profile images -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/</loc>
-    <lastmod>2026-04-14</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://avdeshjadon.dpdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/"/>
+
+    <!-- Main Profile Image -->
     <image:image>
       <image:loc>https://avdeshjadon.dpdns.org/assets/avdeshjadon.jpeg</image:loc>
-      <image:title>Avdesh Jadon - Software Tester and Full Stack Developer</image:title>
-      <image:caption>Avdesh Jadon Portfolio - B.Tech CSE NIT Jalandhar</image:caption>
+      <image:title>Avdesh Jadon - Software Tester &amp; Full Stack Developer</image:title>
+      <image:caption>Official profile photo of Avdesh Jadon, Software Tester and Full Stack Developer from NIT Jalandhar</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Official Profile -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-official-profile.jpg</image:loc>
+      <image:title>Avdesh Jadon - Official Professional Profile Photo</image:title>
+      <image:caption>Official professional profile photo of Avdesh Jadon, B.Tech CSE NIT Jalandhar</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Developer Portfolio Main -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-developer-portfolio-main.jpg</image:loc>
+      <image:title>Avdesh Jadon - Portfolio Main Developer Photo</image:title>
+      <image:caption>Avdesh Jadon developer portfolio main photo - Full Stack Developer</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- NIT Jalandhar CSE -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-nit-jalandhar-cse.jpg</image:loc>
+      <image:title>Avdesh Jadon - NIT Jalandhar Computer Science Student</image:title>
+      <image:caption>Avdesh Jadon, B.Tech Computer Science and Engineering student at NIT Jalandhar</image:caption>
+      <image:geo_location>NIT Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Full Stack Developer -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-developer-full-stack.jpg</image:loc>
+      <image:title>Avdesh Jadon - Full Stack Software Developer</image:title>
+      <image:caption>Avdesh Jadon as a Full Stack Software Developer specializing in MERN stack</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- QA Automation Engineer -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-qa-automation-engineer.jpg</image:loc>
+      <image:title>Avdesh Jadon - QA &amp; Test Automation Engineer</image:title>
+      <image:caption>Avdesh Jadon as a QA and Test Automation Engineer - Selenium, Cypress, Jest expert</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Professional Headshot -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-professional-headshot.jpg</image:loc>
+      <image:title>Avdesh Jadon - Professional Headshot</image:title>
+      <image:caption>Professional headshot photo of Avdesh Jadon, Software Developer from India</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Software Tester NITJ -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-tester-nitj.jpg</image:loc>
+      <image:title>Avdesh Jadon - Software Tester from NIT Jalandhar</image:title>
+      <image:caption>Avdesh Jadon as a Software Tester from NIT Jalandhar - Manual and Automated Testing</image:caption>
+      <image:geo_location>NIT Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- MERN Stack Developer -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-mern-stack-developer.jpg</image:loc>
+      <image:title>Avdesh Jadon - MERN Stack Developer</image:title>
+      <image:caption>Avdesh Jadon as a MERN Stack Developer - MongoDB, Express, React, Node.js</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- JavaScript Expert -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-javascript-expert.jpg</image:loc>
+      <image:title>Avdesh Jadon - JavaScript Expert Developer</image:title>
+      <image:caption>Avdesh Jadon as a JavaScript expert and web developer</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Coding Expert -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-coding-expert.jpg</image:loc>
+      <image:title>Avdesh Jadon - Coding Expert</image:title>
+      <image:caption>Avdesh Jadon as a coding expert and competitive programmer</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+
+    <!-- Web Designer India -->
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-web-designer-india.jpg</image:loc>
+      <image:title>Avdesh Jadon - Web Designer India</image:title>
+      <image:caption>Avdesh Jadon as a Web Designer from India</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
     </image:image>
   </url>
+
+  <!-- ABOUT PAGE -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/about</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/about"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/avdeshjadon.jpeg</image:loc>
+      <image:title>About Avdesh Jadon - Software Tester &amp; Full Stack Developer</image:title>
+      <image:caption>About Avdesh Jadon - B.Tech CSE student at NIT Jalandhar, Software Tester and Full Stack Developer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-nit-jalandhar-cse.jpg</image:loc>
+      <image:title>Avdesh Jadon NIT Jalandhar CSE Student</image:title>
+      <image:caption>Avdesh Jadon studying B.Tech Computer Science at NIT Jalandhar</image:caption>
+    </image:image>
   </url>
+
+  <!-- SKILLS PAGE -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/skills</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/skills"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/skills"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-mern-stack-developer.jpg</image:loc>
+      <image:title>Avdesh Jadon Skills - MERN Stack, Test Automation, JavaScript</image:title>
+      <image:caption>Avdesh Jadon skills in MERN Stack development, Test Automation and more</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-qa-automation-engineer.jpg</image:loc>
+      <image:title>Avdesh Jadon QA Skills - Selenium, Cypress, Jest, JMeter</image:title>
+      <image:caption>Avdesh Jadon's QA and Test Automation skills</image:caption>
+    </image:image>
   </url>
+
+  <!-- PROJECTS PAGE -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/projects</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/projects"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-developer-full-stack.jpg</image:loc>
+      <image:title>Avdesh Jadon Projects - Full Stack &amp; Open Source</image:title>
+      <image:caption>Projects by Avdesh Jadon including Practice Typing, Jmac Visualizer, WebIn Extension</image:caption>
+    </image:image>
   </url>
+
+  <!-- BLOG PAGE -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/blog</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-javascript-expert.jpg</image:loc>
+      <image:title>Avdesh Jadon Blog - Tech Articles by Software Developer</image:title>
+      <image:caption>Technical blog by Avdesh Jadon on software testing, full stack development and more</image:caption>
+    </image:image>
   </url>
+
+  <!-- CONTACT PAGE -->
   <url>
     <loc>https://avdeshjadon.dpdns.org/contact</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/contact"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-professional-headshot.jpg</image:loc>
+      <image:title>Contact Avdesh Jadon - Software Tester &amp; Full Stack Developer</image:title>
+      <image:caption>Contact Avdesh Jadon for software testing, QA automation, full stack development work</image:caption>
+    </image:image>
   </url>
+
+  <!-- BLOG POSTS -->
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-developer-full-stack.jpg</image:loc>
+      <image:title>Building Production React Apps 2026 - Avdesh Jadon Blog</image:title>
+      <image:caption>Article by Avdesh Jadon on building production React apps in 2026</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-qa-automation-engineer.jpg</image:loc>
+      <image:title>Modern Full Stack Testing Guide - Avdesh Jadon</image:title>
+      <image:caption>Comprehensive testing guide by Avdesh Jadon covering Selenium, Cypress, Jest and more</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow"/>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-coding-expert.jpg</image:loc>
+      <image:title>Mastering Git &amp; GitHub Developer Workflow - Avdesh Jadon</image:title>
+      <image:caption>Git and GitHub workflow guide by Avdesh Jadon, Open Source Contributor</image:caption>
+    </image:image>
+  </url>
+
 </urlset>
