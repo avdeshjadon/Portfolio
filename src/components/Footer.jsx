@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import { BsGithub } from "react-icons/bs"
 import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from "react-icons/io5"
 import { BiLogoGmail } from "react-icons/bi"
-import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si"
 
 const socials = [
   { Icon: BiLogoGmail, href: "mailto:theavdeshjadon@gmail.com", label: "Email" },
@@ -11,8 +10,6 @@ const socials = [
   { Icon: IoLogoTwitter, href: "https://x.com/AvdeshJado26477", label: "Twitter" },
   { Icon: IoLogoInstagram, href: "https://instagram.com/__avdeshhere", label: "Instagram" },
   { Icon: BsGithub, href: "https://github.com/avdeshjadon", label: "GitHub" },
-  { Icon: SiLeetcode, href: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
-  { Icon: SiGeeksforgeeks, href: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" },
 ]
 
 const navLinks = [

@@ -5,7 +5,6 @@ import { BsGithub } from 'react-icons/bs'
 import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from 'react-icons/io5'
 import { IoMdMail } from "react-icons/io"
 import { FaPhone } from "react-icons/fa6"
-import { SiGeeksforgeeks, SiLeetcode } from 'react-icons/si'
 
 const socials = [
   { Icon: BiLogoGmail, link: "mailto:theavdeshjadon@gmail.com", label: "Email" },
@@ -13,8 +12,6 @@ const socials = [
   { Icon: IoLogoTwitter, link: "https://x.com/AvdeshJado26477", label: "Twitter" },
   { Icon: IoLogoInstagram, link: "https://instagram.com/__avdeshhere", label: "Instagram" },
   { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" },
-  { Icon: SiLeetcode, link: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
-  { Icon: SiGeeksforgeeks, link: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" }
 ]
 
 export default function Contact() {

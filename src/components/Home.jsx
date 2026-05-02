@@ -3,7 +3,6 @@ import { IoLogoLinkedin, IoLogoTwitter, IoLogoInstagram } from "react-icons/io5"
 import { BiLogoGmail } from "react-icons/bi"
 import { BsGithub } from "react-icons/bs"
 import { TypeAnimation } from "react-type-animation"
-import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si"
 import ThreeBackground from "./ThreeBackground"
 
 const socials = [
@@ -12,8 +11,6 @@ const socials = [
   { Icon: IoLogoTwitter, link: "https://x.com/AvdeshJado26477", label: "Twitter" },
   { Icon: IoLogoInstagram, link: "https://instagram.com/__avdeshhere", label: "Instagram" },
   { Icon: BsGithub, link: "https://github.com/avdeshjadon", label: "GitHub" },
-  { Icon: SiLeetcode, link: "https://leetcode.com/avdeshjadon", label: "LeetCode" },
-  { Icon: SiGeeksforgeeks, link: "https://www.geeksforgeeks.org/profile/theavdeshjadon", label: "GeeksforGeeks" }
 ]
 
 const stagger = {
