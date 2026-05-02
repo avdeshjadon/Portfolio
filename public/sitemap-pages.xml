@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- HOME PAGE -->
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="en-in" href="https://avdeshjadon.dpdns.org/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/"/>
+  </url>
+
+  <!-- MAIN PAGES -->
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/about</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/about"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/skills</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/skills"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/skills"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/projects</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/projects"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/projects"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/contact</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/contact"/>
+  </url>
+
+  <!-- BLOG POSTS -->
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026</loc>
+    <lastmod>2026-04-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/building-production-react-apps-2026"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide</loc>
+    <lastmod>2026-03-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/modern-full-stack-testing-guide"/>
+  </url>
+
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow</loc>
+    <lastmod>2026-01-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://avdeshjadon.dpdns.org/blog/mastering-git-github-developer-workflow"/>
+  </url>
+
+</urlset>

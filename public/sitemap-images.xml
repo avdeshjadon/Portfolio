@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Core Profile Images -->
+  <url>
+    <loc>https://avdeshjadon.dpdns.org/</loc>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/avdeshjadon.jpeg</image:loc>
+      <image:title>Avdesh Jadon - Software Tester &amp; Full Stack Developer</image:title>
+      <image:caption>Official profile photo of Avdesh Jadon, Software Tester and Full Stack Developer from NIT Jalandhar</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-official-profile.jpg</image:loc>
+      <image:title>Avdesh Jadon - Official Professional Profile Photo</image:title>
+      <image:caption>Official professional profile photo of Avdesh Jadon, B.Tech CSE NIT Jalandhar</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-developer-portfolio-main.jpg</image:loc>
+      <image:title>Avdesh Jadon - Portfolio Main Developer Photo</image:title>
+      <image:caption>Avdesh Jadon developer portfolio main photo - Full Stack Developer</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-nit-jalandhar-cse.jpg</image:loc>
+      <image:title>Avdesh Jadon - NIT Jalandhar Computer Science Student</image:title>
+      <image:caption>Avdesh Jadon, B.Tech Computer Science and Engineering student at NIT Jalandhar</image:caption>
+      <image:geo_location>NIT Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-developer-full-stack.jpg</image:loc>
+      <image:title>Avdesh Jadon - Full Stack Software Developer</image:title>
+      <image:caption>Avdesh Jadon as a Full Stack Software Developer specializing in MERN stack</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-qa-automation-engineer.jpg</image:loc>
+      <image:title>Avdesh Jadon - QA &amp; Test Automation Engineer</image:title>
+      <image:caption>Avdesh Jadon as a QA and Test Automation Engineer - Selenium, Cypress, Jest expert</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-professional-headshot.jpg</image:loc>
+      <image:title>Avdesh Jadon - Professional Headshot</image:title>
+      <image:caption>Professional headshot photo of Avdesh Jadon, Software Developer from India</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-software-tester-nitj.jpg</image:loc>
+      <image:title>Avdesh Jadon - Software Tester from NIT Jalandhar</image:title>
+      <image:caption>Avdesh Jadon as a Software Tester from NIT Jalandhar - Manual and Automated Testing</image:caption>
+      <image:geo_location>NIT Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-mern-stack-developer.jpg</image:loc>
+      <image:title>Avdesh Jadon - MERN Stack Developer</image:title>
+      <image:caption>Avdesh Jadon as a MERN Stack Developer - MongoDB, Express, React, Node.js</image:caption>
+      <image:geo_location>Jalandhar, Punjab, India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-javascript-expert.jpg</image:loc>
+      <image:title>Avdesh Jadon - JavaScript Expert Developer</image:title>
+      <image:caption>Avdesh Jadon as a JavaScript expert and web developer</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-coding-expert.jpg</image:loc>
+      <image:title>Avdesh Jadon - Coding Expert</image:title>
+      <image:caption>Avdesh Jadon as a coding expert and competitive programmer</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+    <image:image>
+      <image:loc>https://avdeshjadon.dpdns.org/assets/profiles/avdesh-jadon-web-designer-india.jpg</image:loc>
+      <image:title>Avdesh Jadon - Web Designer India</image:title>
+      <image:caption>Avdesh Jadon as a Web Designer from India</image:caption>
+      <image:geo_location>India</image:geo_location>
+      <image:license>https://avdeshjadon.dpdns.org/license</image:license>
+    </image:image>
+  </url>
+
+</urlset>
