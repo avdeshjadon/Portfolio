@@ -16,12 +16,12 @@ const projects = [
   },
   { 
     id: 2, 
-    title: "Jmac Visualizer", 
-    category: "System Tool", 
-    description: "Interactive sunburst chart to visualize and clean up your Mac's filesystem.", 
-    features: ["Interactive chart", "Filesystem map", "Drill-down", "1-click delete"], 
-    tech: ["Python", "React", "Open Source"], 
-    codeUrl: "https://github.com/avdeshjadon/JmacVisualizer" 
+    title: "Secret Sauce", 
+    category: "AI Assistant", 
+    description: "AI-powered interview assistant that overlays on any platform to help students ace their online interviews on Google Meet and other platforms.", 
+    features: ["Real-time AI assistance", "Cross-platform overlay", "Interview guidance", "Mac/Windows/Linux support"], 
+    tech: ["Electron", "AI/ML", "React", "Node.js"], 
+    codeUrl: "https://github.com/avdeshjadon/Secret-Sauce" 
   },
   { 
     id: 3, 
