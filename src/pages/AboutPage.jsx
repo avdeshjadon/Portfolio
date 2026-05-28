@@ -1,5 +1,6 @@
 import SEOHead from "../components/SEOHead"
 import About from "../components/About"
+import ProfileGallery from "../components/ProfileGallery"
 
 export default function AboutPage() {
   return (
@@ -11,6 +12,7 @@ export default function AboutPage() {
         canonicalPath="/about"
       />
       <About />
+      <ProfileGallery />
     </div>
   )
 }
