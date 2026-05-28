@@ -4,7 +4,6 @@ import Skills from "../components/Skills"
 import About from "../components/About"
 import Projects from "../components/Projects"
 import Contact from "../components/Contact"
-import DinoGame from "../components/DinoGame"
 
 export default function HomePage() {
   return (
@@ -21,7 +20,6 @@ export default function HomePage() {
       <About />
       <Projects />
       <Contact />
-      <DinoGame />
     </>
   )
 }

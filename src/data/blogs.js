@@ -1,5 +1,73 @@
-// Ordered newest-first: #3 (Apr 10) → #2 (Mar 27) → #1 (Jan 3)
+// Ordered newest-first: #4 (May 25) → #3 (Apr 10) → #2 (Mar 27) → #1 (Jan 3)
 export const blogs = [
+  {
+    slug: "architecting-multi-tenant-saas-2026",
+    title: "Architecting Multi-Tenant SaaS Products: A Deep Dive",
+    date: "May 25, 2026",
+    publishedTime: "2026-05-25",
+    modifiedTime: "2026-05-25",
+    category: "Architecture",
+    readTime: "25 min read",
+    summary: "An extremely detailed engineering breakdown of designing robust, scalable, and secure multi-tenant SaaS architectures. We cover data isolation models, Postgres row-level security, tenant routing, and infrastructure orchestration.",
+    intro: "Building a SaaS application goes far beyond just stringing together auth, a database, and a React frontend. The moment you introduce multiple organizations (tenants), application complexity skyrockets. How do you isolate data so Tenant A can never see Tenant B's sensitive information? Should you use a database per tenant, isolated schemas, or row-level security? How do you route subdomains efficiently? In this comprehensive deep dive, we explore exactly how to architect modern, enterprise-grade multi-tenant SaaS products that can safely scale to thousands of organizations.",
+    content: [
+      {
+        heading: "1. The Multi-Tenancy Data Isolation Spectrum",
+        paragraphs: [
+          "Data isolation is the most critical decision you will make in a SaaS product. Choose poorly, and a simple bug could leak data across organizations—a catastrophic security and PR failure. Choose wisely, and you achieve a balance between operational ease and strict security compliance.",
+          "Option 1: Database-per-tenant. This is the highest level of isolation. Every organization gets its own physical instance or logical database. Pros: Incredibly secure, easy to restore a single tenant's data from isolated backups, and 'noisy-neighbor' database locks are nonexistent. Cons: It's an operational nightmare. Running schema migrations across 5,000 independent databases requires massive orchestration pipelines and severely balloons infrastructure costs.",
+          "Option 2: Schema-per-tenant (PostgreSQL). A balanced approach where all tenants share a database instance, but reside in physically isolated schemas. It provides moderate security while keeping infrastructure costs reasonable. However, managing connection pools can become tricky as schema counts climb, and cross-tenant analytical queries are grueling to write.",
+          "Option 3: Shared Database with Row-Level Security (RLS). The modern gold standard for SaaS startups. All tenant data lives in shared tables, segregated by a 'tenant_id' column. We enforce isolation directly at the database engine level using Postgres RLS policies, rather than relying exclusively on application-level ORM filters. If an application developer accidentally drops a 'where tenant_id = ?' clause, the database denies the unauthorized read anyway."
+        ]
+      },
+      {
+        heading: "2. Implementing Postgres Row-Level Security (RLS)",
+        paragraphs: [
+          "Row-Level Security is a game-changer for shared-database multi-tenancy. When RLS is enabled on a table, PostgreSQL automatically filters rows based on a policy before returning results. It essentially turns the DB engine into an impenetrable security boundary.",
+          "To implement RLS effectively, pass the tenant context to Postgres. A common pattern is setting a local session variable upon establishing a database connection: 'SET LOCAL app.current_tenant_id = 'tenant-123';'. Your PostgreSQL policies then read this variable: 'CREATE POLICY tenant_isolation ON users FOR ALL USING (tenant_id = current_setting('app.current_tenant_id'));'.",
+          "One massive advantage of RLS is that it secures all access vectors. Whether you are hitting the database via Prisma, Drizzle ORM, raw raw SQL queries, or a direct connection, the policy holds firm.",
+          "However, RLS is not immune to performance degradation. If you apply policies to large tables without appropriate indexing on the 'tenant_id' column, queries will require full table scans on every request. Always verify query execution plans using 'EXPLAIN ANALYZE' with your RLS policies enabled."
+        ]
+      },
+      {
+        heading: "3. Tenant Resolution & Edge Routing",
+        paragraphs: [
+          "When a request hits your SaaS, how do you know which tenant it belongs to? The application must perform robust 'tenant resolution' before any business logic executes.",
+          "The most elegant user experience is Subdomain Routing (e.g., 'acme.yoursaas.com'). Using edge-routing solutions like Vercel Edge Middleware or Cloudflare Workers, you can intercept the request, extract the subdomain, and rewrite the URL internally to a tenant-specific path (e.g., '/_tenant/acme/dashboard') without changing the browser URL.",
+          "For custom domains ('dashboard.acme.com'), tenant resolution gets more complex. You need to map incoming host headers against a verified domains table. Solutions like AWS API Gateway, Vercel Custom Domains API, or a custom Nginx/Caddy proxy dynamically handle TLS certificate generation (Let's Encrypt) and resolution.",
+          "Path-based routing ('yoursaas.com/t/acme/') is the easiest to implement but looks less professional. It’s ideal for internal admin structures but usually falls short for B2B products where brand identity is key.",
+          "Regardless of the method, tenant resolution should happen at the Edge. Inject the resolved tenant ID as a secure header natively available to your Node.js or Next.js backend, offloading the parsing burden from your core application logic."
+        ]
+      },
+      {
+        heading: "4. Auth strategies: Identity Management",
+        paragraphs: [
+          "Authentication in multi-tenant systems is fundamentally different from a B2C application. A single user (e.g., 'john@email.com') might belong to multiple workspaces, with different roles and permissions in each.",
+          "Use a multi-layered identity model: The 'User' table stores global identity (email, password hash, global 2FA). The 'Tenant_Member' table (a join table) maps a User ID to a Tenant ID, storing tenant-specific roles (Admin, Editor, Viewer).",
+          "When generating JSON Web Tokens (JWTs), do not bake every tenant permission into the payload—the token will exceed HTTP header limits. Instead, the JWT should only assert 'I am John'. Once John selects a workspace on the frontend, issue a short-lived 'Session Token' specific to that tenant, asserting 'I am John acting as Admin in Tenant A'.",
+          "Enterprise B2B SaaS demands SSO (Single Sign-On). Integrating SAML or OIDC allows large companies to log in via Okta or Azure AD. Map the incoming SAML assertion directly to the specific tenant workspace. Ensure strict domain verification (e.g., only users with '@acme.com' can auto-join the Acme tenant via SSO)."
+        ]
+      },
+      {
+        heading: "5. Handling Migrations and Schema Upgrades",
+        paragraphs: [
+          "Seamless database migrations separate junior projects from enterprise systems. If you have a shared-database architecture, applying a migration (like adding a column) is straightforward. But for schema-per-tenant architectures, deployment requires orchestration.",
+          "With schema-per-tenant, a simple 'ALTER TABLE' must be looped across potentially thousands of schemas. This takes time, meaning zero-downtime deployments require careful synchronization. Your application code must be designed to support both the 'old' schema state and the 'new' schema state simultaneously while the loop executes.",
+          "Never introduce breaking schema changes aggressively. To drop or rename a column in multi-tenant systems, use the Expand and Contract pattern. Step 1: Add the new column. Step 2: Start writing to both columns. Step 3: Backfill old data. Step 4: Stop reading from the old column. Step 5: Drop the old column a week later.",
+          "Automate migration tracking. A specialized metadata table in the public schema should track the migration version of every tenant schema independently. If the migration loop aborts mid-way due to a server crash, re-running the CI step should confidently resume exactly where it failed."
+        ]
+      },
+      {
+        heading: "6. Mitigating Noisy Neighbors",
+        paragraphs: [
+          "The biggest risk of shared infrastructure is the 'noisy neighbor'—one tenant running a heavy data export that saturates CPU, effectively bringing down the system for a hundred other paying customers.",
+          "Implement robust application-level rate limiting specifically keyed by 'tenant_id' (using Redis), rather than just IP addresses. An aggressive backend script running via API key from a single IP can quickly bypass IP throttles if not keyed to the tenant.",
+          "For massive analytical queries, use read replicas. The primary database should be reserved exclusively for transactional writes. Heavy reporting endpoints should be routed to asynchronously replicated reader instances. Tools like PgBouncer gracefully handle connection pooling to prevent connection exhaustion.",
+          "Implement background task queues with fairness scheduling. If you use BullMQ or RabbitMQ, don’t process jobs sequentially. If an enterprise tenant queues 50,000 PDF generation tasks, smaller tenants shouldn't wait all day. Use round-robin processing across tenant queues to ensure everyone gets consistent throughput."
+        ]
+      }
+    ]
+  },
   {
     slug: "building-production-react-apps-2026",
     title: "Building Production-Ready React Apps in 2026",
